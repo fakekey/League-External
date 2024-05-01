@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\PyScripts">
+      <UniqueIdentifier>{39a2a5ac-d3b6-4a77-8d0f-4274de29865a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ImGUI">
+      <UniqueIdentifier>{f1a7b6eb-84f9-476c-b60d-f916a3f91fea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\data">
+      <UniqueIdentifier>{80798e58-6509-432c-9fa2-cb1e88604929}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PyScripts\utils">
+      <UniqueIdentifier>{4fced545-5daf-4958-a4f7-ab27048b87e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Offsets.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpellInfo.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitInfo.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemInfo.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemSlot.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameData.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BuffInfo.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Missile.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spell.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryLoadable.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AIManagerInfo.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LeagueMemReader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MemSnapShot.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LeagueRenderer.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PyStructs.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Overlay.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptManager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Script.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="imconfig.h">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui.h">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_impl_dx9.h">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_impl_dx11.h">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_internal.h">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imstb_rectpack.h">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imstb_textedit.h">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imstb_truetype.h">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="PyImguiInterface.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pygame.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigSet.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_impl_win32.h">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Offsets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vippro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Spell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LeagueMemReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LeagueRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Overlay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui.cpp">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_demo.cpp">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_draw.cpp">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_impl_dx9.cpp">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_impl_dx11.cpp">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_tables.cpp">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_widgets.cpp">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Script.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_impl_win32.cpp">
+      <Filter>Source Files\ImGUI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.ini">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="imgui.ini">
+      <Filter>Source Files\ImGUI</Filter>
+    </None>
+    <None Include="PyScripts\drawing.py">
+      <Filter>Source Files\PyScripts</Filter>
+    </None>
+    <None Include="data\ItemData.json">
+      <Filter>Source Files\data</Filter>
+    </None>
+    <None Include="data\SpellData.json">
+      <Filter>Source Files\data</Filter>
+    </None>
+    <None Include="data\UnitData.json">
+      <Filter>Source Files\data</Filter>
+    </None>
+    <None Include="PyScripts\utils\calc.py">
+      <Filter>Source Files\PyScripts\utils</Filter>
+    </None>
+    <None Include="PyScripts\orbwalking.py">
+      <Filter>Source Files\PyScripts</Filter>
+    </None>
+    <None Include="PyScripts\irelia.py">
+      <Filter>Source Files\PyScripts</Filter>
+    </None>
+    <None Include="PyScripts\yasuo.py">
+      <Filter>Source Files\PyScripts</Filter>
+    </None>
+    <None Include="PyScripts\yone.py">
+      <Filter>Source Files\PyScripts</Filter>
+    </None>
+    <None Include="PyScripts\xerath.py">
+      <Filter>Source Files\PyScripts</Filter>
+    </None>
+    <None Include="PyScripts\viktor.py">
+      <Filter>Source Files\PyScripts</Filter>
+    </None>
+    <None Include="PyScripts\twistedfate.py">
+      <Filter>Source Files\PyScripts</Filter>
+    </None>
+  </ItemGroup>
+</Project>
