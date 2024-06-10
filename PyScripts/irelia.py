@@ -88,9 +88,7 @@ def qDmg(game, target):
     else:
         passiveDmg = 0
 
-    return qLvLDmg[me.Q.level - 1] + (totalatk * 0.6) + get_onhit_physical(
-        me, target
-    ), passiveDmg + get_onhit_magical(me, target)
+    return qLvLDmg[me.Q.level - 1] + (totalatk * 0.6) + get_onhit_physical(me, target), passiveDmg + get_onhit_magical(me, target)
 
 
 def CanQ(game, target) -> bool:
@@ -100,13 +98,9 @@ def CanQ(game, target) -> bool:
     totalDmg = 0.0
     dmgQad, dmgQap = qDmg(game, target)
     if target.HasUnitTags("Unit_Minion_Lane"):
-        totalDmg = dmg_hit_on_armor(
-            me, target, dmgQad + qMinionDmg
-        ) + dmg_hit_on_magic_res(me, target, dmgQap)
+        totalDmg = dmg_hit_on_armor(me, target, dmgQad + qMinionDmg) + dmg_hit_on_magic_res(me, target, dmgQap)
     else:
-        totalDmg = dmg_hit_on_armor(me, target, dmgQad) + dmg_hit_on_magic_res(
-            me, target, dmgQap
-        )
+        totalDmg = dmg_hit_on_armor(me, target, dmgQad) + dmg_hit_on_magic_res(me, target, dmgQap)
 
     if target.health - totalDmg < 0.0:
         return True
@@ -135,10 +129,7 @@ def TargetSelectorWeakest(game, range=0.0):
             continue
         if champ.name in clones and champ.R.name == champ.D.name:
             continue
-        if not champ.IsHurtable or (
-            champ.position.distance_squared(me.position)
-            >= (range + champ.info.gameplayRadius / 2) ** 2
-        ):
+        if not champ.IsHurtable or (champ.position.distance_squared(me.position) >= (range + champ.info.gameplayRadius / 2) ** 2):
             continue
         if num >= champ.health:
             num = champ.health
@@ -182,10 +173,7 @@ def TargetSelector(game, enemies, range=0.0):
             continue
         if champ.name in clones and champ.R.name == champ.D.name:
             continue
-        if not champ.IsHurtable or (
-            champ.position.distance_squared(me.position)
-            >= (range + champ.info.gameplayRadius / 2) ** 2
-        ):
+        if not champ.IsHurtable or (champ.position.distance_squared(me.position) >= (range + champ.info.gameplayRadius / 2) ** 2):
             continue
         if is_last_hitable_with_Q(game, champ):
             return champ
@@ -193,15 +181,17 @@ def TargetSelector(game, enemies, range=0.0):
     return target
 
 
-def castE(game, target, e1):
+def castE1(game, pos):
     me = game.player
     if me.E.name == "ireliae":
-        pos = target.position
-        me.E.MoveAndTrigger(game.WorldToScreen(e1))
-        sleep(0.24)
-        me.E.MoveAndTrigger(
-            game.WorldToScreen(pos.add((pos.sub(e1)).normalize().scale(750)))
-        )
+        me.E.MoveAndTrigger(game.WorldToScreen(pos))
+
+
+def castE2(game, target):
+    me = game.player
+    if me.E.name == "ireliae2":
+        predict = predict_pos(game, target, 0.1)
+        me.E.MoveAndTrigger(game.WorldToScreen(predict.add((predict.sub(me.position)).normalize().scale(750))))
 
 
 def combo(game):
@@ -220,23 +210,14 @@ def combo(game):
     if me.isAlive and me.Q.IsReady(game.gameTime) and use_q_in_combo:
         target2 = TargetSelectorWeakest(game, 3000.0)
         if target2:
+            if (me.E.IsReady(game.gameTime) and use_e_in_combo and me.position.distance_squared(target2.position) <= 750 ** 2):
+                castE2(game, target2)
             minion = get_closest_mob_to_enemy_for_gap(game, target2)
             if minion:
                 me.Q.MoveAndTrigger(game.WorldToScreen(minion.position))
-                if (
-                    me.E.IsReady(game.gameTime)
-                    and use_e_in_combo
-                    and minion.position.distance_squared(target2.position) <= 750**2
-                ):
-                    d_me_gap_minion = me.position.distance_squared(minion.position)
-                    if d_me_gap_minion > 0 and d_me_gap_minion <= 150**2:
-                        sleep(0.04)
-                    elif d_me_gap_minion > 150**2 and d_me_gap_minion <= 450**2:
-                        sleep(0.08)
-                    elif d_me_gap_minion > 450**2 and d_me_gap_minion <= 600**2:
-                        sleep(0.18)
-                    castE(game, target2, minion.position)
-
+                if (me.E.IsReady(game.gameTime) and use_e_in_combo and minion.position.distance_squared(target2.position) <= 750 ** 2):
+                    sleep(0.1)
+                    castE1(game, minion.position)
                     return
 
 

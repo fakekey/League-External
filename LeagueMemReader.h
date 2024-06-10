@@ -20,16 +20,11 @@ public:
     /// Creates an object with everything of iterest from the game
     void MakeSnapShot(MemSnapShot& ms);
 
-private:
-    // Process related
-    HANDLE hProcess = NULL;
-    DWORD pid = 0;
-    HWND hWindow = NULL;
+    float gameTime = 0.0f;
 
+private:
     // Memory related
     DWORD_PTR moduleBaseAddr = 0;
-    DWORD moduleSize = 0;
-    BOOL is64Bit = FALSE;
 
 private:
     /// Blacklisted objects that we don't need to read for performance reasons. Set key is the object's network id

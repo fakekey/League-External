@@ -78,6 +78,8 @@ def Vippro_update(game, ui):
     me = game.player
     if me.isAlive and not game.isChatOpen:
         c_atk_speed = me.GetAttackSpeed()
+        if c_atk_speed > 2.5:
+            c_atk_speed = 2.5
         atk_delay = 1.0 / c_atk_speed
         cast_delay = me.GetCastDelay(c_atk_speed)
 
@@ -85,17 +87,19 @@ def Vippro_update(game, ui):
             if press_champ_only_key:
                 game.KeyDown(champ_only_key)
 
+            game.KeyDown(24)
+
             target = get_best_target_in_range(me, game.champs)
 
             if game.gameTime > attackTimer and target:
                 pos = game.WorldToScreen(target.position)
-                old_pos = game.GetCursor()
-                game.MoveCursor(pos)
+                old_pos = GetCursor()
+                MoveCursor(pos)
                 game.PressRightClick()
-                attackTimer = game.gameTime + atk_delay
+                attackTimer = game.gameTime + atk_delay + (kite_ping / 2000.0)
                 moveTimer = game.gameTime + cast_delay + (kite_ping / 2000.0)
-                sleep(kite_ping / 2000.0)
-                game.MoveCursor(old_pos)
+                sleep(0.005)
+                MoveCursor(old_pos)
             else:
                 if game.gameTime > humanizer:
                     if game.gameTime > moveTimer:
@@ -107,20 +111,21 @@ def Vippro_update(game, ui):
                 game.KeyDown(champ_only_key)
             # Lock camera
             game.KeyDown(59)
+            game.KeyDown(24)
 
             target = get_best_minions_in_range(me, [*game.minions, *game.jungles])
 
             if game.gameTime > attackTimer and target:
                 pos = game.WorldToScreen(target.position)
-                old_pos = game.GetCursor()
-                game.MoveCursor(pos)
+                old_pos = GetCursor()
+                MoveCursor(pos)
                 if press_champ_only_key:
                     game.KeyUp(champ_only_key)
                 game.PressRightClick()
-                attackTimer = game.gameTime + atk_delay
+                attackTimer = game.gameTime + atk_delay + (kite_ping / 2000.0)
                 moveTimer = game.gameTime + cast_delay + (kite_ping / 2000.0)
-                sleep(kite_ping / 2000.0)
-                game.MoveCursor(old_pos)
+                sleep(0.005)
+                MoveCursor(old_pos)
             else:
                 if game.gameTime > humanizer:
                     if game.gameTime > moveTimer:
@@ -132,20 +137,21 @@ def Vippro_update(game, ui):
                 game.KeyDown(champ_only_key)
             # Lock camera
             game.KeyDown(59)
+            game.KeyDown(24)
 
             target = get_lasthitable(me, [*game.minions, *game.jungles])
 
             if game.gameTime > attackTimer and target:
                 pos = game.WorldToScreen(target.position)
-                old_pos = game.GetCursor()
-                game.MoveCursor(pos)
+                old_pos = GetCursor()
+                MoveCursor(pos)
                 if press_champ_only_key:
                     game.KeyUp(champ_only_key)
                 game.PressRightClick()
-                attackTimer = game.gameTime + atk_delay
+                attackTimer = game.gameTime + atk_delay + (kite_ping / 2000.0)
                 moveTimer = game.gameTime + cast_delay + (kite_ping / 2000.0)
-                sleep(kite_ping / 2000.0)
-                game.MoveCursor(old_pos)
+                sleep(0.005)
+                MoveCursor(old_pos)
             else:
                 if game.gameTime > humanizer:
                     if game.gameTime > moveTimer:
@@ -155,6 +161,7 @@ def Vippro_update(game, ui):
         else:
             # Unlock camera
             game.KeyUp(59)
+            game.KeyUp(24)
 
             if press_champ_only_key:
                 game.KeyUp(champ_only_key)

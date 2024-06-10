@@ -109,10 +109,10 @@ double GameObject::GetAttackSpeed()
     return info->attackSpeed * (1.0 + bonusAS);
 }
 
-void GameObject::LoadFromMem(DWORD64 base, HANDLE hProcess, bool deepLoad)
+void GameObject::LoadFromMem(DWORD64 base, bool deepLoad)
 {
     address = base;
-    Mem::Read(hProcess, base, buff, sizeBuff);
+    Mem::Read(base, buff, sizeBuff);
 
     memcpy(&objIndex, &buff[Offsets::ObjIndex], sizeof(short));
     memcpy(&networkId, &buff[Offsets::ObjNetworkID], sizeof(DWORD32));
@@ -126,7 +126,7 @@ void GameObject::LoadFromMem(DWORD64 base, HANDLE hProcess, bool deepLoad)
     if (deepLoad) {
         char nameBuff[50];
         memset(nameBuff, 0, sizeof(nameBuff));
-        Mem::Read(hProcess, Mem::ReadDWORDFromBuffer(buff, Offsets::ObjName), nameBuff, 50);
+        Mem::Read(Mem::ReadDWORDFromBuffer(buff, Offsets::ObjName), nameBuff, 50);
 
         name = std::string("");
         if (Character::ContainsOnlyASCII(nameBuff, 50)) {
@@ -138,7 +138,7 @@ void GameObject::LoadFromMem(DWORD64 base, HANDLE hProcess, bool deepLoad)
         if (name == "") {
             char nameBuff2[50];
             memset(nameBuff2, 0, sizeof(nameBuff2));
-            Mem::Read(hProcess, address + Offsets::ObjName, nameBuff2, 50);
+            Mem::Read(address + Offsets::ObjName, nameBuff2, 50);
 
             if (Character::ContainsOnlyASCII(nameBuff2, 50)) {
                 name = Character::ToLower(std::string(nameBuff2));
@@ -159,23 +159,23 @@ void GameObject::LoadFromMem(DWORD64 base, HANDLE hProcess, bool deepLoad)
     memcpy(&attackRange, &buff[Offsets::ObjAttackRange], sizeof(float));
 
     if (HasUnitTags("Unit_Champion")) {
-        LoadChampFromMem(base, hProcess);
-        LoadBuffFromMem(base, hProcess);
-        LoadAIMangerFromMem(base, hProcess);
-        LoadActiveCast(base, hProcess);
+        LoadChampFromMem(base);
+        LoadBuffFromMem(base);
+        LoadAIMangerFromMem(base);
+        LoadActiveCast(base);
     }
 }
 
-void GameObject::LoadChampFromMem(DWORD64 base, HANDLE hProcess)
+void GameObject::LoadChampFromMem(DWORD64 base)
 {
     memcpy(&spellSlotPointerBuffer, &buff[Offsets::ObjSpellBook], sizeof(DWORD64) * 6);
 
-    Q.LoadFromMem(spellSlotPointerBuffer[0], hProcess);
-    W.LoadFromMem(spellSlotPointerBuffer[1], hProcess);
-    E.LoadFromMem(spellSlotPointerBuffer[2], hProcess);
-    R.LoadFromMem(spellSlotPointerBuffer[3], hProcess);
-    D.LoadFromMem(spellSlotPointerBuffer[4], hProcess);
-    F.LoadFromMem(spellSlotPointerBuffer[5], hProcess);
+    Q.LoadFromMem(spellSlotPointerBuffer[0]);
+    W.LoadFromMem(spellSlotPointerBuffer[1]);
+    E.LoadFromMem(spellSlotPointerBuffer[2]);
+    R.LoadFromMem(spellSlotPointerBuffer[3]);
+    D.LoadFromMem(spellSlotPointerBuffer[4]);
+    F.LoadFromMem(spellSlotPointerBuffer[5]);
 
     for (int i = 0; i < 7; ++i) {
         itemSlots[i].isEmpty = true;
@@ -186,16 +186,16 @@ void GameObject::LoadChampFromMem(DWORD64 base, HANDLE hProcess)
         if (slotPtr == 0)
             continue;
 
-        itemPtr = Mem::ReadDWORD(hProcess, slotPtr + 0x10);
+        itemPtr = Mem::ReadDWORD(slotPtr + 0x10);
         if (itemPtr == 0) {
             continue;
         }
 
-        itemInfoPtr = Mem::ReadDWORD(hProcess, itemPtr + Offsets::ItemInfo);
+        itemInfoPtr = Mem::ReadDWORD(itemPtr + Offsets::ItemInfo);
         if (itemInfoPtr == 0)
             continue;
 
-        int id = Mem::ReadDWORD(hProcess, itemInfoPtr + Offsets::ItemInfoId);
+        int id = Mem::ReadDWORD(itemInfoPtr + Offsets::ItemInfoId);
         itemSlots[i].info = GameData::GetItemInfoById(id);
         if (itemSlots[i].info != nullptr) {
             itemSlots[i].isEmpty = false;
@@ -213,11 +213,11 @@ void GameObject::LoadChampFromMem(DWORD64 base, HANDLE hProcess)
     memcpy(&magicResPen, &buff[Offsets::ObjMagicResPen], sizeof(float));
 }
 
-void GameObject::LoadBuffFromMem(DWORD64 base, HANDLE hProcess)
+void GameObject::LoadBuffFromMem(DWORD64 base)
 {
     DWORD64 buffArrayBgn, buffArrayEnd;
-    Mem::Read(hProcess, address + Offsets::ObjBuffManager + Offsets::BuffArrayBegin, &buffArrayBgn, sizeof(DWORD64));
-    Mem::Read(hProcess, address + Offsets::ObjBuffManager + Offsets::BuffArrayEnd, &buffArrayEnd, sizeof(DWORD64));
+    Mem::Read(address + Offsets::ObjBuffManager + Offsets::BuffArrayBegin, &buffArrayBgn, sizeof(DWORD64));
+    Mem::Read(address + Offsets::ObjBuffManager + Offsets::BuffArrayEnd, &buffArrayEnd, sizeof(DWORD64));
 
     int i = 0;
     buffs.clear();
@@ -226,18 +226,18 @@ void GameObject::LoadBuffFromMem(DWORD64 base, HANDLE hProcess)
 
     for (DWORD64 pBuffPtr = buffArrayBgn; pBuffPtr != buffArrayEnd; pBuffPtr += 0x8) {
         i++;
-        DWORD64 buffInstance = Mem::ReadDWORD(hProcess, pBuffPtr);
-        Mem::Read(hProcess, buffInstance, buffListBuffer, 0x90);
+        DWORD64 buffInstance = Mem::ReadDWORD(pBuffPtr);
+        Mem::Read(buffInstance, buffListBuffer, 0x90);
 
         DWORD64 buffInfo, buffNamePtr;
         memcpy(&buffInfo, &buffListBuffer[Offsets::BuffEntryBuff], sizeof(DWORD64));
         if (buffInfo <= 0x1000) {
             continue;
         }
-        Mem::Read(hProcess, buffInfo + Offsets::BuffName, &buffNamePtr, sizeof(DWORD64));
+        Mem::Read(buffInfo + Offsets::BuffName, &buffNamePtr, sizeof(DWORD64));
         memset(buffnamebuffer, 0, sizeof(buffnamebuffer));
 
-        Mem::Read(hProcess, buffNamePtr, buffnamebuffer, 240);
+        Mem::Read(buffNamePtr, buffnamebuffer, 240);
         if (std::string(buffnamebuffer) == "" || !Character::ContainsOnlyASCII(buffnamebuffer, 240)) {
             continue;
         }
@@ -265,26 +265,26 @@ void GameObject::LoadBuffFromMem(DWORD64 base, HANDLE hProcess)
     }
 }
 
-void GameObject::LoadAIMangerFromMem(DWORD64 base, HANDLE hProcess)
+void GameObject::LoadAIMangerFromMem(DWORD64 base)
 {
     if (!AIMangerAddress) {
-        AIMangerAddress = Mem::GetAIMangerAddress(address, hProcess);
+        AIMangerAddress = Mem::GetAIMangerAddress(address);
     }
     if (AIMangerAddress) {
-        float isDashing = 0.f;
+        bool isDashing = false;
         DWORD64 targetPosRoot;
         short posCount = 0;
 
-        Mem::Read(hProcess, AIMangerAddress + Offsets::AIManagerStartPath, &AIManager.startPath, sizeof(Vector3));
-        Mem::Read(hProcess, AIMangerAddress + Offsets::AIManagerEndPath, &AIManager.endPath, sizeof(Vector3));
-        Mem::Read(hProcess, AIMangerAddress + Offsets::AIManagerIsMoving, &AIManager.isMoving, sizeof(bool));
-        Mem::Read(hProcess, AIMangerAddress + Offsets::AIManagerIsDashing, &isDashing, sizeof(float));
-        Mem::Read(hProcess, AIMangerAddress + Offsets::AIManagerTargetPos, &targetPosRoot, sizeof(DWORD64));
-        Mem::Read(hProcess, AIMangerAddress + Offsets::AIManagerSegmentCount, &posCount, sizeof(short));
-        Mem::Read(hProcess, AIMangerAddress + Offsets::Velocity, &AIManager.velocity, sizeof(Vector3));
-        Mem::Read(hProcess, AIMangerAddress + Offsets::ServerPos, &AIManager.serverPos, sizeof(Vector3));
-        Mem::Read(hProcess, AIMangerAddress + Offsets::AIManagerMoveSpeed, &AIManager.moveSpeed, sizeof(float));
-        Mem::Read(hProcess, AIMangerAddress + Offsets::AIManagerDashSpeed, &AIManager.dashSpeed, sizeof(float));
+        Mem::Read(AIMangerAddress + Offsets::AIManagerStartPath, &AIManager.startPath, sizeof(Vector3));
+        Mem::Read(AIMangerAddress + Offsets::AIManagerEndPath, &AIManager.endPath, sizeof(Vector3));
+        Mem::Read(AIMangerAddress + Offsets::AIManagerIsMoving, &AIManager.isMoving, sizeof(bool));
+        Mem::Read(AIMangerAddress + Offsets::AIManagerIsDashing, &isDashing, sizeof(bool));
+        Mem::Read(AIMangerAddress + Offsets::AIManagerTargetPos, &targetPosRoot, sizeof(DWORD64));
+        Mem::Read(AIMangerAddress + Offsets::AIManagerSegmentCount, &posCount, sizeof(short));
+        Mem::Read(AIMangerAddress + Offsets::Velocity, &AIManager.velocity, sizeof(Vector3));
+        Mem::Read(AIMangerAddress + Offsets::ServerPos, &AIManager.serverPos, sizeof(Vector3));
+        Mem::Read(AIMangerAddress + Offsets::AIManagerMoveSpeed, &AIManager.moveSpeed, sizeof(float));
+        Mem::Read(AIMangerAddress + Offsets::AIManagerDashSpeed, &AIManager.dashSpeed, sizeof(float));
         AIManager.isDashing = isDashing > 0.f && AIManager.isMoving;
 
         int j = 0;
@@ -293,27 +293,27 @@ void GameObject::LoadAIMangerFromMem(DWORD64 base, HANDLE hProcess)
         for (int i = 0; i < posCount; i++) {
             j++;
             Vector3 tPos;
-            Mem::Read(hProcess, targetPosRoot + i * 0xC, &tPos, sizeof(Vector3));
+            Mem::Read(targetPosRoot + i * 0xC, &tPos, sizeof(Vector3));
             AIManager.targetPath.push_back(tPos);
         }
     }
 }
 
-void GameObject::LoadActiveCast(DWORD64 base, HANDLE hProcess)
+void GameObject::LoadActiveCast(DWORD64 base)
 {
     DWORD64 activeCastRoot;
-    Mem::Read(hProcess, address + Offsets::ActiveSpellRoot, &activeCastRoot, sizeof(DWORD64));
-    Mem::Read(hProcess, activeCastRoot + Offsets::ActiveSpellStartPos, &activeCast.startPos, sizeof(Vector3));
-    Mem::Read(hProcess, activeCastRoot + Offsets::ActiveSpellEndPos, &activeCast.endPos, sizeof(Vector3));
+    Mem::Read(address + Offsets::ActiveSpellRoot, &activeCastRoot, sizeof(DWORD64));
+    Mem::Read(activeCastRoot + Offsets::ActiveSpellStartPos, &activeCast.startPos, sizeof(Vector3));
+    Mem::Read(activeCastRoot + Offsets::ActiveSpellEndPos, &activeCast.endPos, sizeof(Vector3));
 
     DWORD64 spellInfoPtr;
-    Mem::Read(hProcess, activeCastRoot + Offsets::ActiveSpellInfo, &spellInfoPtr, sizeof(DWORD64));
+    Mem::Read(activeCastRoot + Offsets::ActiveSpellInfo, &spellInfoPtr, sizeof(DWORD64));
 
-    DWORD64 spellDataPtr = Mem::ReadDWORD(hProcess, spellInfoPtr + Offsets::SpellInfoSpellData);
-    DWORD64 spellNamePtr = Mem::ReadDWORD(hProcess, spellDataPtr + Offsets::SpellDataSpellName);
+    DWORD64 spellDataPtr = Mem::ReadDWORD(spellInfoPtr + Offsets::SpellInfoSpellData);
+    DWORD64 spellNamePtr = Mem::ReadDWORD(spellDataPtr + Offsets::SpellDataSpellName);
 
     char spellNameBuff[50];
-    Mem::Read(hProcess, spellNamePtr, spellNameBuff, 50);
+    Mem::Read(spellNamePtr, spellNameBuff, 50);
     if (Character::ContainsOnlyASCII(spellNameBuff, 50)) {
         activeCast.name = Character::ToLower(std::string(spellNameBuff));
     } else {

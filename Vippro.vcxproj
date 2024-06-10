@@ -78,9 +78,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\Intermediate\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\Intermediate\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -116,15 +118,17 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\include;D:\boost_1_85_0\linking\include\boost-1_85;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\include;D:\Boost Python\linking\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\libs;D:\boost_1_85_0\linking\lib;C:\Users\nghilq\Desktop\Vippro\external_libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\libs;D:\Boost Python\linking\lib;C:\Users\nghilq\Downloads\Gumangusi\external_libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>d3d11.lib;dxgi.lib;dcomp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>NotSet</ShowProgress>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -135,16 +139,18 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\include;D:\boost_1_85_0\linking\include\boost-1_85;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\include;D:\Boost Python\linking\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\libs;D:\boost_1_85_0\linking\lib;C:\Users\nghilq\Desktop\Vippro\external_libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\libs;D:\Boost Python\linking\lib;C:\Users\nghilq\Downloads\Gumangusi\external_libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>d3d11.lib;dxgi.lib;dcomp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -175,6 +181,7 @@
     <ClInclude Include="Pygame.h" />
     <ClInclude Include="PyImguiInterface.h" />
     <ClInclude Include="PyStructs.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Script.h" />
     <ClInclude Include="ScriptManager.h" />
     <ClInclude Include="Spell.h" />
@@ -215,6 +222,7 @@
     <None Include="imgui.ini" />
     <None Include="PyScripts\drawing.py" />
     <None Include="PyScripts\irelia.py" />
+    <None Include="PyScripts\jayce.py" />
     <None Include="PyScripts\orbwalking.py" />
     <None Include="PyScripts\twistedfate.py" />
     <None Include="PyScripts\utils\calc.py" />
@@ -222,6 +230,12 @@
     <None Include="PyScripts\xerath.py" />
     <None Include="PyScripts\yasuo.py" />
     <None Include="PyScripts\yone.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Vippro.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="favicon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

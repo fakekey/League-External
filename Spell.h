@@ -30,7 +30,8 @@ enum SummonerSpellType {
     IGNITE,
     SMITE,
     RECALL,
-    WARD
+    WARD,
+    QSS,
 };
 
 class Spell : MemoryLoadable {
@@ -46,7 +47,7 @@ public:
 
     float GetRemainingCooldown(float gameTime);
     const char* GetTypeStr();
-    void LoadFromMem(DWORD64 base, HANDLE hProcess, bool deepLoad = true);
+    void LoadFromMem(DWORD64 base, bool deepLoad = true);
     void MoveAndTrigger(const Vector2& pos);
     void MoveAndRelease(const Vector2& pos);
     void Cast(const Vector2& fromPos, const Vector2& toPos);

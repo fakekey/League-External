@@ -144,7 +144,8 @@ BOOST_PYTHON_MODULE(Vippro)
         .value("IGNITE", SummonerSpellType::IGNITE)
         .value("SMITE", SummonerSpellType::SMITE)
         .value("RECALL", SummonerSpellType::RECALL)
-        .value("WARD", SummonerSpellType::WARD);
+        .value("WARD", SummonerSpellType::WARD)
+        .value("QSS", SummonerSpellType::QSS);
 
     class_<Spell>("Spell", init<SpellSlot>())
         .def_readonly("name", &Spell::name)

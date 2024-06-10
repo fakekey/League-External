@@ -22,56 +22,29 @@ LeagueMemReader::LeagueMemReader()
 
 bool LeagueMemReader::IsLeagueWindowActive()
 {
-    HWND handle = GetForegroundWindow();
-    DWORD h;
-    GetWindowThreadProcessId(handle, &h);
-    return pid == h;
+    return Chokevy::GetInstance()->IsWindowActive();
 }
 
 bool LeagueMemReader::IsHookedToProcess()
 {
-    return LeagueProcess::IsProcessRunning(pid);
+    return gameTime > 2.0f;
 }
 
 void LeagueMemReader::HookToProcess()
 {
-    // Find the window
-    hWindow = FindWindowA("RiotWindowClass", NULL);
-    if (hWindow == NULL) {
-        throw WinApiException("League window not found");
-    }
-
     // Get the process ID
-    GetWindowThreadProcessId(hWindow, &pid);
-    if (pid == NULL) {
-        throw WinApiException("Couldn't retrieve league process id");
+    if (!Chokevy::GetInstance()->GetProcessId()) {
+        throw WinApiException("Please start game!");
     }
 
-    // Open the process
-    hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
-    if (hProcess == NULL) {
-        throw WinApiException("Couldn't open league process");
-    }
-
-    // Check architecture
-    if (0 == IsWow64Process(hProcess, &is64Bit)) {
-        throw WinApiException("Failed to identify if process has 32 or 64 bit architecture");
-    }
-
-    HMODULE hMods[1024];
-    DWORD cbNeeded;
-    if (EnumProcessModules(hProcess, hMods, sizeof(hMods), &cbNeeded)) {
-        moduleBaseAddr = (DWORD_PTR)hMods[0];
-    } else {
-        throw WinApiException("Couldn't retrieve league base address");
-    }
+    moduleBaseAddr = Chokevy::GetInstance()->GetModuleBase();
 
     blacklistedObjects.clear();
 }
 
 void LeagueMemReader::ReadRenderer(MemSnapShot& ms)
 {
-    ms.renderer->LoadFromMem(moduleBaseAddr, hProcess);
+    ms.renderer->LoadFromMem(moduleBaseAddr);
 }
 
 void LeagueMemReader::ReadChampions(MemSnapShot& ms)
@@ -79,17 +52,17 @@ void LeagueMemReader::ReadChampions(MemSnapShot& ms)
     ms.champions.clear();
     ms.others.clear();
 
-    auto HeroList = Mem::ReadDWORD(hProcess, moduleBaseAddr + Offsets::ChampionList);
-    auto pList = Mem::ReadDWORD(hProcess, HeroList + 0x8);
-    UINT pSize = Mem::ReadDWORD(hProcess, HeroList + 0x10);
+    auto HeroList = Mem::ReadDWORD(moduleBaseAddr + Offsets::ChampionList);
+    auto pList = Mem::ReadDWORD(HeroList + 0x8);
+    UINT pSize = Mem::ReadDWORD(HeroList + 0x10);
 
     // Read objects from the pointers we just read
     for (unsigned int i = 0; i < pSize; ++i) {
-        auto champObject = Mem::ReadDWORD(hProcess, pList + (0x8 * i));
+        auto champObject = Mem::ReadDWORD(pList + (0x8 * i));
 
         std::shared_ptr<GameObject> obj;
         obj = std::shared_ptr<GameObject>(new GameObject());
-        obj->LoadFromMem(champObject, hProcess, true);
+        obj->LoadFromMem(champObject, true);
         ms.objectMap[obj->networkId] = obj;
         ms.indexToNetId[obj->objIndex] = obj->networkId;
         ms.updatedThisFrame.insert(obj->networkId);
@@ -109,17 +82,17 @@ void LeagueMemReader::ReadMinions(MemSnapShot& ms)
     ms.minions.clear();
     ms.jungles.clear();
 
-    auto MinionList = Mem::ReadDWORD(hProcess, moduleBaseAddr + Offsets::MinionList);
-    auto pList = Mem::ReadDWORD(hProcess, MinionList + 0x8);
-    UINT pSize = Mem::ReadDWORD(hProcess, MinionList + 0x10);
+    auto MinionList = Mem::ReadDWORD(moduleBaseAddr + Offsets::MinionList);
+    auto pList = Mem::ReadDWORD(MinionList + 0x8);
+    UINT pSize = Mem::ReadDWORD(MinionList + 0x10);
 
     // Read objects from the pointers we just read
     for (unsigned int i = 0; i < pSize; ++i) {
-        auto champObject = Mem::ReadDWORD(hProcess, pList + (0x8 * i));
+        auto champObject = Mem::ReadDWORD(pList + (0x8 * i));
 
         std::shared_ptr<GameObject> obj;
         obj = std::shared_ptr<GameObject>(new GameObject());
-        obj->LoadFromMem(champObject, hProcess, true);
+        obj->LoadFromMem(champObject, true);
         ms.objectMap[obj->networkId] = obj;
         ms.indexToNetId[obj->objIndex] = obj->networkId;
         ms.updatedThisFrame.insert(obj->networkId);
@@ -141,11 +114,11 @@ void LeagueMemReader::ReadMissiles(MemSnapShot& ms)
     ms.missiles.clear();
 
     DWORD64 missileMapPtr = 0;
-    Mem::Read(hProcess, moduleBaseAddr + Offsets::MissileList, &missileMapPtr, sizeof(DWORD64));
+    Mem::Read(moduleBaseAddr + Offsets::MissileList, &missileMapPtr, sizeof(DWORD64));
     UINT16 numMissiles = 0;
     DWORD64 rootNode = 0;
-    Mem::Read(hProcess, missileMapPtr + Offsets::MissileCount, &numMissiles, sizeof(UINT16));
-    Mem::Read(hProcess, missileMapPtr + Offsets::MissileRoot, &rootNode, sizeof(DWORD64));
+    Mem::Read(missileMapPtr + Offsets::MissileCount, &numMissiles, sizeof(UINT16));
+    Mem::Read(missileMapPtr + Offsets::MissileRoot, &rootNode, sizeof(DWORD64));
 
     std::deque<DWORD64> nodesToVisit;
     std::set<DWORD64> visitedNodes;
@@ -158,9 +131,9 @@ void LeagueMemReader::ReadMissiles(MemSnapShot& ms)
         nodesToVisit.pop_front();
         visitedNodes.insert(node);
 
-        Mem::Read(hProcess, node, &childNode1, sizeof(DWORD64));
-        Mem::Read(hProcess, node + 0x8, &childNode2, sizeof(DWORD64));
-        Mem::Read(hProcess, node + 0x10, &childNode3, sizeof(DWORD64));
+        Mem::Read(node, &childNode1, sizeof(DWORD64));
+        Mem::Read(node + 0x8, &childNode2, sizeof(DWORD64));
+        Mem::Read(node + 0x10, &childNode3, sizeof(DWORD64));
 
         if (visitedNodes.find(childNode1) == visitedNodes.end()) {
             if (std::find(nodesToVisit.begin(), nodesToVisit.end(), childNode1) == nodesToVisit.end()) {
@@ -179,23 +152,23 @@ void LeagueMemReader::ReadMissiles(MemSnapShot& ms)
         }
 
         DWORD32 netId = 0;
-        Mem::Read(hProcess, node + Offsets::MissileKey, &netId, sizeof(DWORD32));
+        Mem::Read(node + Offsets::MissileKey, &netId, sizeof(DWORD32));
         if (netId - 0x40000000 > 0x100000) {
             continue;
         }
 
         DWORD64 addr = 0;
-        Mem::Read(hProcess, node + Offsets::MissileValue, &addr, sizeof(DWORD64));
+        Mem::Read(node + Offsets::MissileValue, &addr, sizeof(DWORD64));
         if (addr == 0) {
             continue;
         }
 
         DWORD64 missileInfoPtr, missileNamePtr;
-        Mem::Read(hProcess, addr + Offsets::MissileInfo, &missileInfoPtr, sizeof(DWORD64));
-        Mem::Read(hProcess, missileInfoPtr + Offsets::MissileValue, &missileNamePtr, sizeof(DWORD64));
+        Mem::Read(addr + Offsets::MissileInfo, &missileInfoPtr, sizeof(DWORD64));
+        Mem::Read(missileInfoPtr + Offsets::MissileValue, &missileNamePtr, sizeof(DWORD64));
         memset(missileNameBuff, 0, sizeof(missileNameBuff));
 
-        Mem::Read(hProcess, missileNamePtr, missileNameBuff, 50);
+        Mem::Read(missileNamePtr, missileNameBuff, 50);
         if (std::string(missileNameBuff) == "" || !Character::ContainsOnlyASCII(missileNameBuff, 50)) {
             continue;
         }
@@ -211,11 +184,11 @@ void LeagueMemReader::ReadMissiles(MemSnapShot& ms)
         std::shared_ptr<Missile> obj;
         obj = std::shared_ptr<Missile>(new Missile());
         obj->name = missileName;
-        Mem::Read(hProcess, addr + Offsets::MissileSrcIdx, &obj->srcIdx, sizeof(short));
-        Mem::Read(hProcess, addr + Offsets::ObjTeam, &obj->team, sizeof(short));
-        Mem::Read(hProcess, addr + Offsets::ObjPos, &obj->pos, sizeof(Vector3));
-        Mem::Read(hProcess, addr + Offsets::MissileStartPos, &obj->startPos, sizeof(Vector3));
-        Mem::Read(hProcess, addr + Offsets::MissileEndPos, &obj->endPos, sizeof(Vector3));
+        Mem::Read(addr + Offsets::MissileSrcIdx, &obj->srcIdx, sizeof(short));
+        Mem::Read(addr + Offsets::ObjTeam, &obj->team, sizeof(short));
+        Mem::Read(addr + Offsets::ObjPos, &obj->pos, sizeof(Vector3));
+        Mem::Read(addr + Offsets::MissileStartPos, &obj->startPos, sizeof(Vector3));
+        Mem::Read(addr + Offsets::MissileEndPos, &obj->endPos, sizeof(Vector3));
         obj->info = info;
 
         ms.missiles.push_back(obj);
@@ -225,7 +198,7 @@ void LeagueMemReader::ReadMissiles(MemSnapShot& ms)
 void LeagueMemReader::FindLocalPlayer(MemSnapShot& ms)
 {
     DWORD32 netId = 0;
-    Mem::Read(hProcess, Mem::ReadDWORD(hProcess, moduleBaseAddr + Offsets::LocalPlayer) + Offsets::ObjNetworkID, &netId, sizeof(DWORD32));
+    Mem::Read(Mem::ReadDWORD(moduleBaseAddr + Offsets::LocalPlayer) + Offsets::ObjNetworkID, &netId, sizeof(DWORD32));
     auto it = ms.objectMap.find(netId);
     if (it != ms.objectMap.end()) {
         ms.player = it->second;
@@ -257,14 +230,16 @@ void LeagueMemReader::ClearMissingObjects(MemSnapShot& ms)
 
 void LeagueMemReader::MakeSnapShot(MemSnapShot& ms)
 {
-    Mem::Read(hProcess, moduleBaseAddr + Offsets::GameTime, &ms.gameTime, sizeof(float));
+    Mem::Read(moduleBaseAddr + Offsets::GameTime, &ms.gameTime, sizeof(float));
+    gameTime = ms.gameTime;
+    GameObject::gameTime = ms.gameTime;
+
     // Checking chat
-    DWORD64 chatInstance = Mem::ReadDWORD(hProcess, moduleBaseAddr + Offsets::ChatClient);
-    Mem::Read(hProcess, chatInstance + Offsets::ChatIsOpen, &ms.isChatOpen, sizeof(bool));
+    DWORD64 chatInstance = Mem::ReadDWORD(moduleBaseAddr + Offsets::ChatClient);
+    Mem::Read(chatInstance + Offsets::ChatIsOpen, &ms.isChatOpen, sizeof(bool));
 
     if (ms.gameTime > 2.f) {
         ms.updatedThisFrame.clear();
-        GameObject::gameTime = ms.gameTime;
         ReadRenderer(ms);
         ReadChampions(ms);
         ReadMinions(ms);

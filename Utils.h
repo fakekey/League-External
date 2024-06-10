@@ -4,6 +4,47 @@
 #include <iostream>
 #include <string>
 
+constexpr DWORD FILE_RW_ACCESS = FILE_READ_ACCESS | FILE_WRITE_ACCESS;
+constexpr DWORD IOCTL_UNKNOWN_BASE = FILE_DEVICE_UNKNOWN;
+constexpr DWORD IOCTL_CE_READMEMORY = (IOCTL_UNKNOWN_BASE << 16) | (0x0800 << 2) | (METHOD_BUFFERED) | (FILE_RW_ACCESS << 14);
+constexpr DWORD IOCTL_CE_GETPEPROCESS = (IOCTL_UNKNOWN_BASE << 16) | (0x0805 << 2) | (METHOD_BUFFERED) | (FILE_RW_ACCESS << 14);
+
+class Chokevy {
+public:
+    Chokevy();
+    void Destructor();
+    bool InitializeDriver();
+    bool GetProcessId();
+    DWORD64 GetModuleBase();
+    bool ReadProcessMemory(LPCVOID lpBaseAddress, LPVOID lpBuffer, SIZE_T nSize, SIZE_T* lpNumberOfBytesRead);
+    bool IsWindowActive();
+
+    template <typename T>
+    T Read(DWORD64 addr);
+
+private:
+    struct __Request {
+        UINT64 processid;
+        UINT64 startaddress;
+        WORD bytestoread;
+    };
+
+private:
+    HANDLE hDevice;
+    DWORD pid;
+    DWORD64 GetPEProcess();
+    bool ReadProcessMemory64(DWORD64 lpBaseAddress, LPVOID lpBuffer, SIZE_T nSize, SIZE_T* lpNumberOfBytesRead);
+    bool ReadProcessMemory64_Internal(DWORD64 lpBaseAddress, LPVOID lpBuffer, SIZE_T nSize, SIZE_T* lpNumberOfBytesRead);
+
+private:
+    static Chokevy* __instancePtr;
+
+public:
+    static bool AdjustPrivilege(std::string_view privilegeName);
+    static Chokevy* GetInstance();
+    static void CloseInstance();
+};
+
 class WinApiException : public std::runtime_error {
 
 public:
@@ -47,16 +88,16 @@ private:
 namespace Mem {
 
 /// Reads a DWORD64 at the specified memory location
-DWORD64 ReadDWORD(HANDLE hProcess, DWORD64 addr);
+DWORD64 ReadDWORD(DWORD64 addr);
 
 /// Reads an arbitrary struct at the specified memory location
-void Read(HANDLE hProcess, DWORD64 addr, void* structure, int size);
+void Read(DWORD64 addr, void* structure, int size);
 
 /// Reads a DWORD64 at the specified location in a given buffer
 DWORD64 ReadDWORDFromBuffer(void* buff, int position);
 
 /// Reads a DWORD64 of AIMangerAddress
-__int64 GetAIMangerAddress(DWORD64 base, HANDLE hProcess);
+__int64 GetAIMangerAddress(DWORD64 base);
 };
 
 namespace Character {

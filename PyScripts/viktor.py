@@ -55,6 +55,9 @@ def Vippro_draw_settings(game, ui):
     ui.Separator()
 
 
+humanizer = 0.0
+
+
 def combo(game):
     global use_q_in_combo, use_e_in_combo, use_r_in_combo
 
@@ -88,7 +91,7 @@ def combo(game):
         me.isAlive
         and me.R.IsReady(game.gameTime)
         and use_r_in_combo
-        and me.R.name == "viktorchaosstorm"
+        and game.gameTime > humanizer
     ):
         target = get_best_target_in_range(me, game.champs, me.R.info.castRange)
         if target:
@@ -98,6 +101,7 @@ def combo(game):
                 and me.position.distance_squared(prediction) <= me.R.info.castRange**2
             ):
                 me.R.MoveAndTrigger(game.WorldToScreen(prediction))
+                humanizer = game.gameTime + 1.0
 
 
 def Vippro_update(game, ui):

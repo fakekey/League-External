@@ -24,6 +24,8 @@ std::map<std::string, SummonerSpellType> Spell::summonerSpellTypeDict = {
     { std::string("summonerrecall"), SummonerSpellType::RECALL },
     { std::string("s12_summonersmiteplayerganker"), SummonerSpellType::SMITE },
     { std::string("s12_summonersmiteduel"), SummonerSpellType::SMITE },
+    { std::string("quicksilversash"), SummonerSpellType::QSS },
+    { std::string("itemmercurial"), SummonerSpellType::QSS },
 };
 
 float Spell::GetRemainingCooldown(float gameTime)
@@ -65,9 +67,9 @@ bool Spell::IsReady(float gameTime)
     return level > 0 && GetRemainingCooldown(gameTime) == 0.f;
 }
 
-void Spell::LoadFromMem(DWORD64 base, HANDLE hProcess, bool deepLoad)
+void Spell::LoadFromMem(DWORD64 base, bool deepLoad)
 {
-    Mem::Read(hProcess, base, buffer, 0x150);
+    Mem::Read(base, buffer, 0x150);
 
     memcpy(&readyAt, buffer + Offsets::SpellSlotTime, sizeof(float));
     memcpy(&level, buffer + Offsets::SpellSlotLevel, sizeof(int));
@@ -75,11 +77,12 @@ void Spell::LoadFromMem(DWORD64 base, HANDLE hProcess, bool deepLoad)
     DWORD64 spellInfoPtr;
     memcpy(&spellInfoPtr, buffer + Offsets::SpellSlotSpellInfo, sizeof(DWORD64));
 
-    DWORD64 spellDataPtr = Mem::ReadDWORD(hProcess, spellInfoPtr + Offsets::SpellInfoSpellData);
-    DWORD64 spellNamePtr = Mem::ReadDWORD(hProcess, spellDataPtr + Offsets::SpellDataSpellName);
+    DWORD64 spellDataPtr = Mem::ReadDWORD(spellInfoPtr + Offsets::SpellInfoSpellData);
+    DWORD64 spellNamePtr = Mem::ReadDWORD(spellDataPtr + Offsets::SpellDataSpellName);
 
     char buff[50];
-    Mem::Read(hProcess, spellNamePtr, buff, 50);
+    memset(buff, 0, sizeof(buff));
+    Mem::Read(spellNamePtr, buff, 50);
     if (Character::ContainsOnlyASCII(buff, 50)) {
         name = Character::ToLower(std::string(buff));
     } else {

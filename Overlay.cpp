@@ -31,7 +31,7 @@ void Overlay::Init()
     SetConsoleTitleA(windowName.c_str());
 
     // Create window with random name & class name
-    WNDCLASSEXA wc = { sizeof(WNDCLASSEX), CS_CLASSDC, WndProc, 0L, 0L, GetModuleHandle(NULL), NULL, NULL, NULL, NULL, windowClassName.c_str(), NULL };
+    /*WNDCLASSEXA wc = { sizeof(WNDCLASSEX), CS_CLASSDC, WndProc, 0L, 0L, GetModuleHandle(NULL), NULL, NULL, NULL, NULL, windowClassName.c_str(), NULL };
     RegisterClassExA(&wc);
     hWindow = CreateWindowExA(
         WS_EX_TOPMOST | WS_EX_NOACTIVATE | WS_EX_LAYERED,
@@ -44,58 +44,58 @@ void Overlay::Init()
         throw WinApiException("Failed to create overlay window");
     }
 
-    ShowWindow(hWindow, SW_SHOW);
+    ShowWindow(hWindow, SW_SHOW);*/
 
     // Initialize Direct3D
-    if (!CreateDeviceD3D(hWindow)) {
+    /*if (!CreateDeviceD3D(hWindow)) {
         CleanupDeviceD3D();
         throw std::runtime_error("Failed to create D3D device");
-    }
+    }*/
 
     // Setup imgui context
-    IMGUI_CHECKVERSION();
-    ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO();
-    (void)io;
-    D3DDEVICE_CREATION_PARAMETERS d3dcp { 0 };
-    io.ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
-    io.DeltaTime = 1.0f / 60.0f;
+    //IMGUI_CHECKVERSION();
+    //ImGui::CreateContext();
+    //ImGuiIO& io = ImGui::GetIO();
+    //(void)io;
+    //D3DDEVICE_CREATION_PARAMETERS d3dcp { 0 };
+    //io.ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
+    //io.DeltaTime = 1.0f / 60.0f;
 
-    // Setup Dear ImGui style
-    ImGui::StyleColorsLight();
-    ImGuiStyle& style = ImGui::GetStyle();
+    //// Setup Dear ImGui style
+    //ImGui::StyleColorsLight();
+    //ImGuiStyle& style = ImGui::GetStyle();
 
     // Setup Platform/Renderer backends
-    ImGui_ImplWin32_Init(hWindow);
-    ImGui_ImplDX11_Init(dxDevice, dxDeviceContext);
+    //ImGui_ImplWin32_Init(hWindow);
+    //ImGui_ImplDX11_Init(dxDevice, dxDeviceContext);
 
-    ImGui::GetStyle().FrameRounding = 4.0f;
-    ImGui::GetStyle().GrabRounding = 4.0f;
-    style.Alpha = 1.0f; // Global alpha applies to everything in ImGui
-    style.WindowPadding = ImVec2(10, 10); // Padding within a window
-    style.WindowMinSize = ImVec2(100, 100); // Minimum window size
-    style.WindowRounding = 0.0f; // Radius of window corners rounding. Set to 0.0f to have rectangular windows
-    style.WindowTitleAlign = ImVec2(0.0f, 0.5f); // Alignment for title bar text
-    style.ChildRounding = 0.0f; // Radius of child window corners rounding. Set to 0.0f to have rectangular child windows
-    style.FramePadding = ImVec2(5, 5); // Padding within a framed rectangle (used by most widgets)
-    style.FrameRounding = 0.0f; // Radius of frame corners rounding. Set to 0.0f to have rectangular frames (used by most widgets).
-    style.ItemSpacing = ImVec2(5, 5); // Horizontal and vertical spacing between widgets/lines
-    style.ItemInnerSpacing = ImVec2(4, 4); // Horizontal and vertical spacing between within elements of a composed widget (e.g. a slider and its label)
-    style.TouchExtraPadding = ImVec2(0, 0); // Expand reactive bounding box for touch-based system where touch position is not accurate enough. Unfortunately we don't sort widgets so priority on overlap will always be given to the first widget. So don't grow this too much!
-    style.IndentSpacing = 21.0f; // Horizontal spacing when e.g. entering a tree node. Generally == (FontSize + FramePadding.x*2).
-    style.ColumnsMinSpacing = 6.0f; // Minimum horizontal spacing between two columns
-    style.ScrollbarSize = 16.0f; // Width of the vertical scrollbar, Height of the horizontal scrollbar
-    style.ScrollbarRounding = 9.0f; // Radius of grab corners rounding for scrollbar
-    style.GrabMinSize = 10.0f; // Minimum width/height of a grab box for slider/scrollbar
-    style.GrabRounding = 0.0f; // Radius of grabs corners rounding. Set to 0.0f to have rectangular slider grabs.
-    style.ButtonTextAlign = ImVec2(0.5f, 0.5f);
-    style.DisplayWindowPadding = ImVec2(22, 22);
-    style.DisplaySafeAreaPadding = ImVec2(4, 4);
-    style.AntiAliasedLines = true;
-    style.AntiAliasedFill = true;
-    style.CurveTessellationTol = 1.25f;
+    //ImGui::GetStyle().FrameRounding = 4.0f;
+    //ImGui::GetStyle().GrabRounding = 4.0f;
+    //style.Alpha = 1.0f; // Global alpha applies to everything in ImGui
+    //style.WindowPadding = ImVec2(10, 10); // Padding within a window
+    //style.WindowMinSize = ImVec2(100, 100); // Minimum window size
+    //style.WindowRounding = 0.0f; // Radius of window corners rounding. Set to 0.0f to have rectangular windows
+    //style.WindowTitleAlign = ImVec2(0.0f, 0.5f); // Alignment for title bar text
+    //style.ChildRounding = 0.0f; // Radius of child window corners rounding. Set to 0.0f to have rectangular child windows
+    //style.FramePadding = ImVec2(5, 5); // Padding within a framed rectangle (used by most widgets)
+    //style.FrameRounding = 0.0f; // Radius of frame corners rounding. Set to 0.0f to have rectangular frames (used by most widgets).
+    //style.ItemSpacing = ImVec2(5, 5); // Horizontal and vertical spacing between widgets/lines
+    //style.ItemInnerSpacing = ImVec2(4, 4); // Horizontal and vertical spacing between within elements of a composed widget (e.g. a slider and its label)
+    //style.TouchExtraPadding = ImVec2(0, 0); // Expand reactive bounding box for touch-based system where touch position is not accurate enough. Unfortunately we don't sort widgets so priority on overlap will always be given to the first widget. So don't grow this too much!
+    //style.IndentSpacing = 21.0f; // Horizontal spacing when e.g. entering a tree node. Generally == (FontSize + FramePadding.x*2).
+    //style.ColumnsMinSpacing = 6.0f; // Minimum horizontal spacing between two columns
+    //style.ScrollbarSize = 16.0f; // Width of the vertical scrollbar, Height of the horizontal scrollbar
+    //style.ScrollbarRounding = 9.0f; // Radius of grab corners rounding for scrollbar
+    //style.GrabMinSize = 10.0f; // Minimum width/height of a grab box for slider/scrollbar
+    //style.GrabRounding = 0.0f; // Radius of grabs corners rounding. Set to 0.0f to have rectangular slider grabs.
+    //style.ButtonTextAlign = ImVec2(0.5f, 0.5f);
+    //style.DisplayWindowPadding = ImVec2(22, 22);
+    //style.DisplaySafeAreaPadding = ImVec2(4, 4);
+    //style.AntiAliasedLines = true;
+    //style.AntiAliasedFill = true;
+    //style.CurveTessellationTol = 1.25f;
 
-    ImVec4* colors = ImGui::GetStyle().Colors;
+    /* ImVec4* colors = ImGui::GetStyle().Colors;
     colors[ImGuiCol_Text] = ImVec4(0.90f, 0.90f, 0.90f, 1.00f);
     colors[ImGuiCol_TextDisabled] = ImVec4(0.60f, 0.60f, 0.60f, 1.00f);
     colors[ImGuiCol_TextSelectedBg] = ImVec4(0.00f, 0.00f, 1.00f, 0.35f);
@@ -131,7 +131,7 @@ void Overlay::Init()
     colors[ImGuiCol_PlotLinesHovered] = ImVec4(0.90f, 0.70f, 0.00f, 1.00f);
     colors[ImGuiCol_PlotHistogram] = ImVec4(0.90f, 0.70f, 0.00f, 1.00f);
     colors[ImGuiCol_PlotHistogramHovered] = ImVec4(1.00f, 0.60f, 0.00f, 1.00f);
-    colors[ImGuiCol_ModalWindowDimBg] = ImVec4(0.20f, 0.20f, 0.20f, 0.35f);
+    colors[ImGuiCol_ModalWindowDimBg] = ImVec4(0.20f, 0.20f, 0.20f, 0.35f);*/
 }
 
 void Overlay::GameStart(MemSnapShot& memSnapshot)
@@ -158,17 +158,17 @@ void Overlay::Update(MemSnapShot& memSnapshot)
 {
 
     // Simple check to see if game ended
-    if (!isWindowVisible) {
+    /*  if (!isWindowVisible) {
         return;
-    }
+    }*/
 
     PyGame state = PyGame::ConstructFromMemSnapShot(memSnapshot);
 
-    DrawOverlayWindows(state);
+    //DrawOverlayWindows(state);
     ExecScripts(state);
-    if (isWOpen) {
+    /*   if (isWOpen) {
         DrawUI(state, memSnapshot);
-    }
+    }*/
 }
 
 void Overlay::RenderFrame()

@@ -2,11 +2,11 @@
 #include "Offsets.h"
 #include "Utils.h"
 
-void LeagueRenderer::LoadFromMem(DWORD_PTR moduleBase, HANDLE hProcess)
+void LeagueRenderer::LoadFromMem(DWORD_PTR moduleBase)
 {
     char buff[128];
 
-    Mem::Read(hProcess, moduleBase + Offsets::ViewProjMatrix, buff, 128);
+    Mem::Read(moduleBase + Offsets::ViewProjMatrix, buff, 128);
     memcpy(viewMatrix, buff, 16 * sizeof(float));
     memcpy(projMatrix, &buff[16 * sizeof(float)], 16 * sizeof(float));
     MultiplyMatrices(viewProjMatrix, viewMatrix, 4, 4, projMatrix, 4, 4);

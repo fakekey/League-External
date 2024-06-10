@@ -13,7 +13,7 @@ public:
     float projMatrix[16];
     float viewProjMatrix[16];
 
-    void LoadFromMem(DWORD_PTR moduleBase, HANDLE hProcess);
+    void LoadFromMem(DWORD_PTR moduleBase);
 
     /// Converts world coordinates to screen coordinates
     Vector2 WorldToScreen(const Vector3& pos) const;

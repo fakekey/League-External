@@ -18,8 +18,34 @@ using namespace std::chrono;
 
 void MainLoop(LeagueMemReader& reader);
 
+BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
+{
+    switch (fdwCtrlType) {
+    case CTRL_CLOSE_EVENT:
+        Chokevy::GetInstance()->Destructor();
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
 int main()
 {
+    if (!SetConsoleCtrlHandler(CtrlHandler, TRUE)) {
+        printf("ERROR: Could not set control handler\n");
+        return _getch();
+    }
+
+    if (!Chokevy::AdjustPrivilege("SeDebugPrivilege")) {
+        printf("Can't change privilege\n");
+        return _getch();
+    }
+
+    if (!Chokevy::GetInstance()->InitializeDriver()) {
+        Chokevy::GetInstance()->Destructor();
+        return _getch();
+    }
+
     LeagueMemReader reader = LeagueMemReader();
 
     try {
@@ -55,18 +81,18 @@ void OverlayThread(bool& firstIter, bool& isLeagueWindowActive, std::shared_ptr<
     }
 
     while (true) {
-        if (overlay.IsVisible()) {
-            // On some systems the ingame cursor is replaced with the default Windows cursor
-            // With the WS_EX_TRANSPARENT window flag enabled the cursor is as expected but the user cannot control the overlay
-            if (Input::WasKeyPressed(HKey::F8)) {
-                overlay.ToggleTransparent();
-            }
-            if (!isLeagueWindowActive) {
-                overlay.Hide();
-            }
-        } else if (isLeagueWindowActive) {
-            overlay.Show();
-        }
+        //if (overlay.IsVisible()) {
+        //    // On some systems the ingame cursor is replaced with the default Windows cursor
+        //    // With the WS_EX_TRANSPARENT window flag enabled the cursor is as expected but the user cannot control the overlay
+        //    if (Input::WasKeyPressed(HKey::F8)) {
+        //        overlay.ToggleTransparent();
+        //    }
+        //    if (!isLeagueWindowActive) {
+        //        overlay.Hide();
+        //    }
+        //} else if (isLeagueWindowActive) {
+        //    overlay.Show();
+        //}
 
         try {
             if (memSnapshot->player.get() == nullptr) {
@@ -77,9 +103,9 @@ void OverlayThread(bool& firstIter, bool& isLeagueWindowActive, std::shared_ptr<
                 continue;
             }
 
-            if (overlay.IsVisible()) {
+            /*    if (overlay.IsVisible()) {
                 overlay.StartFrame();
-            }
+            }*/
             // If the game started
             if (ms->gameTime > 2.f) {
                 // Tell the UI that a new game has started
@@ -91,9 +117,9 @@ void OverlayThread(bool& firstIter, bool& isLeagueWindowActive, std::shared_ptr<
                 // Update UI
                 overlay.Update(*ms);
             }
-            if (overlay.IsVisible()) {
+            /*    if (overlay.IsVisible()) {
                 overlay.RenderFrame();
-            }
+            }*/
         } catch (std::runtime_error exception) {
             printf("[!] Unexpected error occured: \n [!] %s \n", exception.what());
             break;
@@ -123,6 +149,7 @@ void MainLoop(LeagueMemReader& reader)
             // Try to find the league process and get its information necessary for reading
             if (rehook) {
                 reader.HookToProcess();
+                reader.MakeSnapShot(*memSnapshot);
                 rehook = false;
                 firstIter = true;
                 printf("[i] Found League process. The UI will appear when the game start.\n");
@@ -140,6 +167,7 @@ void MainLoop(LeagueMemReader& reader)
             }
         } catch (WinApiException exception) {
             // This should trigger only when we don't find the league process.
+            reader.gameTime = 0.f;
             rehook = true;
         } catch (std::runtime_error exception) {
             printf("[!] Unexpected error occured: \n [!] %s \n", exception.what());

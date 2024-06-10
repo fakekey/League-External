@@ -4,6 +4,7 @@ Vippro_script_info = {
     "script": "Draw",
     "author": "nghilq",
     "description": "Draw some fancy shits",
+    "target_champ": "draw",
 }
 
 enemy_ranges = False

@@ -209,16 +209,21 @@ void Input::MoveAndRelease(HKey key, float x, float y)
 void Input::MoveWhilePress(HKey key, float x1, float y1, float x2, float y2)
 {
     POINT oldPos;
-    GetCursorPos(&oldPos);
-    BlockInput(true);
-    ClipMouse(x1, y1);
-    Move(x1, y1);
-    PressKey(key);
-    Sleep(5);
-    ClipMouse(x2, y2);
-    Move(x2, y2);
-    Sleep(5);
-    ClipCursor(NULL);
-    Move(oldPos.x, oldPos.y);
-    BlockInput(false);
+    try {
+        GetCursorPos(&oldPos);
+        BlockInput(true);
+        ClipMouse(x1, y1);
+        Move(x1, y1);
+        PressKey(key);
+        Sleep(5);
+        ClipMouse(x2, y2);
+        Move(x2, y2);
+        Sleep(5);
+        ClipCursor(NULL);
+        Move(oldPos.x, oldPos.y);
+        BlockInput(false);
+    } catch (const std::exception& ex) {
+        printf("exception: %s\n", ex.what());
+        BlockInput(false);
+    }
 }

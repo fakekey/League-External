@@ -12,7 +12,7 @@
 
 class GameObject : MemoryLoadable {
 public:
-    void LoadFromMem(DWORD64 base, HANDLE hProcess, bool deepLoad = true);
+    void LoadFromMem(DWORD64 base, bool deepLoad = true);
     bool IsRanged();
     bool IsAllyTo(const GameObject& other) const;
     bool IsEnemyTo(const GameObject& other) const;
@@ -22,10 +22,10 @@ public:
     bool IsNotEqualTo(const GameObject& other) const;
     double GetCastDelay(double attackSpeed);
     double GetAttackSpeed();
-    void LoadChampFromMem(DWORD64 base, HANDLE hProcess);
-    void LoadBuffFromMem(DWORD64 base, HANDLE hProcess);
-    void LoadAIMangerFromMem(DWORD64 base, HANDLE hProcess);
-    void LoadActiveCast(DWORD64 base, HANDLE hProcess);
+    void LoadChampFromMem(DWORD64 base);
+    void LoadBuffFromMem(DWORD64 base);
+    void LoadAIMangerFromMem(DWORD64 base);
+    void LoadActiveCast(DWORD64 base);
     BuffInfo* GetBuffByName(std::string buffName);
 
 public:
@@ -72,7 +72,7 @@ private:
     static BYTE buffListBuffer[0x90];
 
 protected:
-    static const SIZE_T sizeBuff = 0x4F00;
+    static const SIZE_T sizeBuff = 0x4FFF;
     static BYTE buff[sizeBuff];
 
 public:
