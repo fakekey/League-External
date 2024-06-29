@@ -4,9 +4,9 @@ Offsets::Offsets() {};
 
 int Offsets::GameTime = 0x193A5C8; // f3 0f 11 3d ? ? ? ? 48 8b 49
 int Offsets::LocalPlayer = 0x194E988; // 48 8b 0d ? ? ? ? 48 85 c9 74 ? 48 81 c1 ? ? ? ? 48 89 5c 24 ? 48 89 7c 24
-int Offsets::ChampionList = 0x1945B18; // 0x192D8C8 // 48 8b 05 ? ? ? ? f3 0f 10 35 ? ? ? ? 48 8b 70
-int Offsets::MinionList = 0x1948930; // 0x1930670 // 48 8b 05 ? ? ? ? f3 0f 10 40 ? 48 83 c4
-int Offsets::MissileList = 0x1948940; // 0x1930680 // 4C 8B 05 ? ? ? ? 49 8B 58 08
+int Offsets::ChampionList = 0x192D8C8; // 48 8b 05 ? ? ? ? f3 0f 10 35 ? ? ? ? 48 8b 70
+int Offsets::MinionList = 0x1930670; // 48 8b 05 ? ? ? ? f3 0f 10 40 ? 48 83 c4
+int Offsets::MissileList = 0x1930680; // 4C 8B 05 ? ? ? ? 49 8B 58 08
 int Offsets::ViewProjMatrix = 0x19A4310; // 48 8d 0d ? ? ? ? c7 45 ? ? ? ? ? e8 ? ? ? ? 48 8d 55
 
 int Offsets::ChatClient = 0x194DCF8; // 48 8b 0d ? ? ? ? 48 85 c9 74 ? e8 ? ? ? ? 84 c0 74 ? 48 8b 0d ? ? ? ? e8 ? ? ? ? 48 8b 0d ? ? ? ? 48 85 c9 74 ? e8 ? ? ? ? 48 8b 0d ? ? ? ? e8
@@ -56,7 +56,7 @@ int Offsets::AiManagerCurrentSegment = 0x2E0;
 int Offsets::ServerPos = 0x54C;
 int Offsets::Velocity = 0x440;
 
-int Offsets::ObjBuffManager = 0x2F60;
+int Offsets::ObjBuffManager = 0x3080;
 int Offsets::BuffArrayBegin = 0x18;
 int Offsets::BuffArrayEnd = 0x20;
 int Offsets::BuffEntryBuff = 0x10;
