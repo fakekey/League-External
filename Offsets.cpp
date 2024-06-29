@@ -2,15 +2,15 @@
 
 Offsets::Offsets() {};
 
-int Offsets::GameTime = 0x1952A18;
-int Offsets::LocalPlayer = 0x19661E8;
-int Offsets::ChampionList = 0x1945B18;
-int Offsets::MinionList = 0x1948930;
-int Offsets::MissileList = 0x1948940;
-int Offsets::ViewProjMatrix = 0x19BB570;
+int Offsets::GameTime = 0x193A5C8; // f3 0f 11 3d ? ? ? ? 48 8b 49
+int Offsets::LocalPlayer = 0x194E988; // 48 8b 0d ? ? ? ? 48 85 c9 74 ? 48 81 c1 ? ? ? ? 48 89 5c 24 ? 48 89 7c 24
+int Offsets::ChampionList = 0x1945B18; // 0x192D8C8 // 48 8b 05 ? ? ? ? f3 0f 10 35 ? ? ? ? 48 8b 70
+int Offsets::MinionList = 0x1948930; // 0x1930670 // 48 8b 05 ? ? ? ? f3 0f 10 40 ? 48 83 c4
+int Offsets::MissileList = 0x1948940; // 0x1930680 // 4C 8B 05 ? ? ? ? 49 8B 58 08
+int Offsets::ViewProjMatrix = 0x19A4310; // 48 8d 0d ? ? ? ? c7 45 ? ? ? ? ? e8 ? ? ? ? 48 8d 55
 
-int Offsets::ChatClient = 0x1966398;
-int Offsets::ChatIsOpen = 0x588;
+int Offsets::ChatClient = 0x194DCF8; // 48 8b 0d ? ? ? ? 48 85 c9 74 ? e8 ? ? ? ? 84 c0 74 ? 48 8b 0d ? ? ? ? e8 ? ? ? ? 48 8b 0d ? ? ? ? 48 85 c9 74 ? e8 ? ? ? ? 48 8b 0d ? ? ? ? e8
+int Offsets::ChatIsOpen = 0x5A0;
 
 int Offsets::ObjIndex = 0x10;
 int Offsets::ObjTeam = 0x3C;
@@ -33,10 +33,10 @@ int Offsets::ObjArmor = 0x195C;
 int Offsets::ObjMagicRes = 0x1964;
 int Offsets::ObjMoveSpeed = 0x1974;
 int Offsets::ObjAttackRange = 0x197C;
-int Offsets::ObjName = 0x4440;
-int Offsets::ObjLevel = 0x4E70;
+int Offsets::ObjName = 0x4560;
+int Offsets::ObjLevel = 0x4FA8;
 
-int Offsets::ObjSpellBook = 0x3CC0;
+int Offsets::ObjSpellBook = 0x3DE8;
 int Offsets::SpellSlotSpellInfo = 0x140;
 int Offsets::SpellInfoSpellData = 0x50;
 int Offsets::SpellDataSpellName = 0x80;
@@ -77,10 +77,10 @@ int Offsets::MissileEndPos = 0x3B4;
 int Offsets::MissileInfo = 0x2E8;
 int Offsets::MissileSrcIdx = 0x378;
 
-int Offsets::ActiveSpellRoot = 0x31F8;
+int Offsets::ActiveSpellRoot = 0x3320;
 int Offsets::ActiveSpellInfo = 0x8;
-int Offsets::ActiveSpellStartPos = 0xC8;
-int Offsets::ActiveSpellEndPos = 0xD4;
+int Offsets::ActiveSpellStartPos = 0xD0;
+int Offsets::ActiveSpellEndPos = 0xDC;
 
 int Offsets::ObjItemList = 0x4F08;
 int Offsets::ItemInfo = 0x30;
