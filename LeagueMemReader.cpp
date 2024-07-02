@@ -67,7 +67,7 @@ void LeagueMemReader::ReadChampions(MemSnapShot& ms)
         ms.indexToNetId[obj->objIndex] = obj->networkId;
         ms.updatedThisFrame.insert(obj->networkId);
 
-        if (obj->name.size() <= 2 || blacklistedObjectNames.find(obj->name) != blacklistedObjectNames.end()) {
+        if ((obj->name.size() <= 2 && obj->name != "vi") || blacklistedObjectNames.find(obj->name) != blacklistedObjectNames.end()) {
             blacklistedObjects.insert(obj->networkId);
         } else if (obj->HasUnitTags("Unit_Champion")) {
             ms.champions.push_back(obj);
@@ -243,7 +243,7 @@ void LeagueMemReader::MakeSnapShot(MemSnapShot& ms)
         ReadRenderer(ms);
         ReadChampions(ms);
         ReadMinions(ms);
-        ReadMissiles(ms);
+        //ReadMissiles(ms);
         ClearMissingObjects(ms);
         FindLocalPlayer(ms);
     }

@@ -73,6 +73,7 @@ void Script::Load(const char* file)
 
     if (NULL == moduleObj) {
         printf("    [+] Load %s.py failed\n", file);
+        PyErr_Print();
 
         PyObject *ptype, *pvalue, *ptraceback;
         PyErr_Fetch(&ptype, &pvalue, &ptraceback);
@@ -94,7 +95,7 @@ void Script::ExecUpdate(const PyGame& state, const PyImguiInterface& ui)
             call<void>(updateFunc, boost::ref(state), boost::ref(ui));
         }
     } catch (error_already_set) {
-        loadError = GetPyError();
+        PyErr_Print();
     }
 }
 

@@ -5,7 +5,7 @@ Offsets::Offsets() {};
 int Offsets::GameTime = 0x193A5C8; // f3 0f 11 3d ? ? ? ? 48 8b 49
 int Offsets::LocalPlayer = 0x194E988; // 48 8b 0d ? ? ? ? 48 85 c9 74 ? 48 81 c1 ? ? ? ? 48 89 5c 24 ? 48 89 7c 24
 int Offsets::ChampionList = 0x192D8C8; // 48 8b 05 ? ? ? ? f3 0f 10 35 ? ? ? ? 48 8b 70
-int Offsets::MinionList = 0x1930670; // 48 8b 05 ? ? ? ? f3 0f 10 40 ? 48 83 c4
+int Offsets::MinionList = 0x1930668; // 48 8b 05 ? ? ? ? f3 0f 10 40 ? 48 83 c4
 int Offsets::MissileList = 0x1930680; // 4C 8B 05 ? ? ? ? 49 8B 58 08
 int Offsets::ViewProjMatrix = 0x19A4310; // 48 8d 0d ? ? ? ? c7 45 ? ? ? ? ? e8 ? ? ? ? 48 8d 55
 
@@ -16,7 +16,7 @@ int Offsets::ObjIndex = 0x10;
 int Offsets::ObjTeam = 0x3C;
 int Offsets::ObjPos = 0x220;
 int Offsets::ObjNetworkID = 0xC8;
-int Offsets::ObjVisible = 0x348;
+int Offsets::ObjVisible = 0x330;
 int Offsets::ObjSpawnCount = 0x360;
 int Offsets::ObjTargetable = 0x1018;
 int Offsets::ObjHealth = 0x11E8;
@@ -43,7 +43,7 @@ int Offsets::SpellDataSpellName = 0x80;
 int Offsets::SpellSlotLevel = 0x28;
 int Offsets::SpellSlotTime = 0x30;
 
-int Offsets::AIManagerAddr = 0x42F8;
+int Offsets::AIManagerAddr = 0x4418;
 int Offsets::AIManagerStartPath = 0x2F0;
 int Offsets::AIManagerEndPath = 0x2FC;
 int Offsets::AIManagerTargetPos = 0x308;
@@ -72,16 +72,16 @@ int Offsets::MissileKey = 0x20;
 int Offsets::MissileValue = 0x28;
 int Offsets::MissileRoot = 0x8;
 int Offsets::MissileCount = 0x10;
-int Offsets::MissileStartPos = 0x3A8;
-int Offsets::MissileEndPos = 0x3B4;
+int Offsets::MissileStartPos = 0x3B0;
+int Offsets::MissileEndPos = 0x3BC;
 int Offsets::MissileInfo = 0x2E8;
-int Offsets::MissileSrcIdx = 0x378;
+int Offsets::MissileSrcIdx = 0x380;
 
 int Offsets::ActiveSpellRoot = 0x3320;
 int Offsets::ActiveSpellInfo = 0x8;
 int Offsets::ActiveSpellStartPos = 0xD0;
 int Offsets::ActiveSpellEndPos = 0xDC;
 
-int Offsets::ObjItemList = 0x4F08;
+int Offsets::ObjItemList = 0x5040;
 int Offsets::ItemInfo = 0x30;
 int Offsets::ItemInfoId = 0x9c;

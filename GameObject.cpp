@@ -162,7 +162,7 @@ void GameObject::LoadFromMem(DWORD64 base, bool deepLoad)
         LoadChampFromMem(base);
         LoadBuffFromMem(base);
         LoadAIMangerFromMem(base);
-        LoadActiveCast(base);
+        //LoadActiveCast(base);
     }
 }
 
@@ -267,25 +267,25 @@ void GameObject::LoadBuffFromMem(DWORD64 base)
 
 void GameObject::LoadAIMangerFromMem(DWORD64 base)
 {
-    if (!AIMangerAddress) {
-        AIMangerAddress = Mem::GetAIMangerAddress(address);
+    if (!AIManagerAddress) {
+        AIManagerAddress = Mem::GetAIManagerAddress(address, 0);
     }
-    if (AIMangerAddress) {
+    if (AIManagerAddress) {
         bool isDashing = false;
         DWORD64 targetPosRoot;
         short posCount = 0;
 
-        Mem::Read(AIMangerAddress + Offsets::AIManagerStartPath, &AIManager.startPath, sizeof(Vector3));
-        Mem::Read(AIMangerAddress + Offsets::AIManagerEndPath, &AIManager.endPath, sizeof(Vector3));
-        Mem::Read(AIMangerAddress + Offsets::AIManagerIsMoving, &AIManager.isMoving, sizeof(bool));
-        Mem::Read(AIMangerAddress + Offsets::AIManagerIsDashing, &isDashing, sizeof(bool));
-        Mem::Read(AIMangerAddress + Offsets::AIManagerTargetPos, &targetPosRoot, sizeof(DWORD64));
-        Mem::Read(AIMangerAddress + Offsets::AIManagerSegmentCount, &posCount, sizeof(short));
-        Mem::Read(AIMangerAddress + Offsets::Velocity, &AIManager.velocity, sizeof(Vector3));
-        Mem::Read(AIMangerAddress + Offsets::ServerPos, &AIManager.serverPos, sizeof(Vector3));
-        Mem::Read(AIMangerAddress + Offsets::AIManagerMoveSpeed, &AIManager.moveSpeed, sizeof(float));
-        Mem::Read(AIMangerAddress + Offsets::AIManagerDashSpeed, &AIManager.dashSpeed, sizeof(float));
-        AIManager.isDashing = isDashing > 0.f && AIManager.isMoving;
+        Mem::Read(AIManagerAddress + Offsets::AIManagerStartPath, &AIManager.startPath, sizeof(Vector3));
+        Mem::Read(AIManagerAddress + Offsets::AIManagerEndPath, &AIManager.endPath, sizeof(Vector3));
+        Mem::Read(AIManagerAddress + Offsets::AIManagerIsMoving, &AIManager.isMoving, sizeof(bool));
+        Mem::Read(AIManagerAddress + Offsets::AIManagerIsDashing, &isDashing, sizeof(bool));
+        Mem::Read(AIManagerAddress + Offsets::AIManagerTargetPos, &targetPosRoot, sizeof(DWORD64));
+        Mem::Read(AIManagerAddress + Offsets::AIManagerSegmentCount, &posCount, sizeof(short));
+        Mem::Read(AIManagerAddress + Offsets::Velocity, &AIManager.velocity, sizeof(Vector3));
+        Mem::Read(AIManagerAddress + Offsets::ServerPos, &AIManager.serverPos, sizeof(Vector3));
+        Mem::Read(AIManagerAddress + Offsets::AIManagerMoveSpeed, &AIManager.moveSpeed, sizeof(float));
+        Mem::Read(AIManagerAddress + Offsets::AIManagerDashSpeed, &AIManager.dashSpeed, sizeof(float));
+        AIManager.isDashing = isDashing && AIManager.isMoving;
 
         int j = 0;
         AIManager.targetPath.clear();

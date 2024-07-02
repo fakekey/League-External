@@ -64,7 +64,7 @@ public:
     Spell F = Spell(SpellSlot::F);
     std::vector<BuffInfo> buffs;
     Missile activeCast;
-    __int64 AIMangerAddress;
+    __int64 AIManagerAddress;
     AIManagerInfo AIManager;
 
 private:
@@ -72,7 +72,7 @@ private:
     static BYTE buffListBuffer[0x90];
 
 protected:
-    static const SIZE_T sizeBuff = 0x4FFF;
+    static const SIZE_T sizeBuff = 0x5100;
     static BYTE buff[sizeBuff];
 
 public:

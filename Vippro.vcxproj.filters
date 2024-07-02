@@ -247,6 +247,9 @@
     <None Include="PyScripts\jayce.py">
       <Filter>Source Files\PyScripts</Filter>
     </None>
+    <None Include="PyScripts\utils\input.py">
+      <Filter>Source Files\PyScripts\utils</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Vippro.rc">

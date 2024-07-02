@@ -118,14 +118,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\include;D:\Boost Python\linking\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\include;D:\Boost\linking\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\libs;D:\Boost Python\linking\lib;C:\Users\nghilq\Downloads\Gumangusi\external_libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\libs;D:\Boost\linking\lib;D:\Gumangusi\external_libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>d3d11.lib;dxgi.lib;dcomp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>NotSet</ShowProgress>
       <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
@@ -139,7 +139,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\include;D:\Boost Python\linking\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\include;D:\Boost\linking\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -148,7 +148,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\libs;D:\Boost Python\linking\lib;C:\Users\nghilq\Downloads\Gumangusi\external_libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\nghilq\AppData\Local\Programs\Python\Python310\libs;D:\Boost\linking\lib;D:\Gumangusi\external_libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>d3d11.lib;dxgi.lib;dcomp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
     </Link>
@@ -226,6 +226,7 @@
     <None Include="PyScripts\orbwalking.py" />
     <None Include="PyScripts\twistedfate.py" />
     <None Include="PyScripts\utils\calc.py" />
+    <None Include="PyScripts\utils\input.py" />
     <None Include="PyScripts\viktor.py" />
     <None Include="PyScripts\xerath.py" />
     <None Include="PyScripts\yasuo.py" />

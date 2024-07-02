@@ -213,7 +213,7 @@ DWORD64 Mem::ReadDWORDFromBuffer(void* buff, int position)
     return result;
 }
 
-__int64 Mem::GetAIMangerAddress(DWORD64 base)
+__int64 Mem::GetAIManagerAddress(DWORD64 base, DWORD64 custom)
 {
     uint8_t v3b;
     unsigned char* v1;
@@ -222,7 +222,7 @@ __int64 Mem::GetAIMangerAddress(DWORD64 base)
     __int64 return_val;
     SIZE_T x = 0;
 
-    v1 = (unsigned __int8*)(base + Offsets::AIManagerAddr);
+    v1 = (unsigned __int8*)(base + (Offsets::AIManagerAddr + custom));
     v2 = 0;
     Chokevy::GetInstance()->ReadProcessMemory((LPCVOID)(v1 + 16), &v3b, sizeof(uint8_t), &x);
     Chokevy::GetInstance()->ReadProcessMemory((LPCVOID)(v1 + (8 * v3b + 24)), &v7, sizeof(__int64), &x);

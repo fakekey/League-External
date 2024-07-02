@@ -97,7 +97,7 @@ void Read(DWORD64 addr, void* structure, int size);
 DWORD64 ReadDWORDFromBuffer(void* buff, int position);
 
 /// Reads a DWORD64 of AIMangerAddress
-__int64 GetAIMangerAddress(DWORD64 base);
+__int64 GetAIManagerAddress(DWORD64 base, DWORD64 custom);
 };
 
 namespace Character {
