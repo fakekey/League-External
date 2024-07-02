@@ -190,7 +190,7 @@ def get_best_minions_in_range(me, minions: list, range=0.0):
 
 def predict_pos(game, target, cumTime: float):
     if not target.AIManager.isMoving:
-        return target.AIManager.serverPos
+        return target.position
     if target.AIManager.isDashing:
         return target.AIManager.endPath
 
@@ -200,7 +200,7 @@ def predict_pos(game, target, cumTime: float):
         dir = target.AIManager.targetPath[1] .sub(target.AIManager.targetPath[0]).normalize()
 
     distance_to_travel = target.AIManager.moveSpeed * (cumTime + (game.ping / 2000.0))
-    return target.AIManager.serverPos.add(dir.scale(distance_to_travel))
+    return target.position.add(dir.scale(distance_to_travel))
 
 
 def circle_on_line(A, B, C, R):
