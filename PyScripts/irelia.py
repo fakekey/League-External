@@ -1,6 +1,8 @@
 from Vippro import *
 from utils.calc import *
+from utils.input import *
 from time import sleep
+from orbwalking import resetAtk
 
 Vippro_script_info = {
     "script": "Irelia",
@@ -184,14 +186,16 @@ def TargetSelector(game, enemies, range=0.0):
 def castE1(game, pos):
     me = game.player
     if me.E.name == "ireliae":
-        me.E.MoveAndTrigger(game.WorldToScreen(pos))
+        MoveAndTrigger("e", game.WorldToScreen(pos))
+        resetAtk()
 
 
 def castE2(game, target):
     me = game.player
     if me.E.name == "ireliae2":
         predict = predict_pos(game, target, 0.1)
-        me.E.MoveAndTrigger(game.WorldToScreen(predict.add((predict.sub(me.position)).normalize().scale(750))))
+        MoveAndTrigger("e", game.WorldToScreen(predict.add((predict.sub(me.position)).normalize().scale(750))))
+        resetAtk()
 
 
 def combo(game):
@@ -202,9 +206,10 @@ def combo(game):
     if me.isAlive and me.Q.IsReady(game.gameTime) and use_q_in_combo:
         target = TargetSelector(game, game.champs, 600)
         if target:
-            me.Q.MoveAndTrigger(game.WorldToScreen(target.position))
+            MoveAndTrigger("q", game.WorldToScreen(target.position))
             lastQ[target.objIndex] = game.gameTime
             sleep(0.02)
+            resetAtk()
             return
 
     if me.isAlive and me.Q.IsReady(game.gameTime) and use_q_in_combo:
@@ -214,7 +219,8 @@ def combo(game):
                 castE2(game, target2)
             minion = get_closest_mob_to_enemy_for_gap(game, target2)
             if minion:
-                me.Q.MoveAndTrigger(game.WorldToScreen(minion.position))
+                MoveAndTrigger("q", game.WorldToScreen(minion.position))
+                resetAtk()
                 if (me.E.IsReady(game.gameTime) and use_e_in_combo and minion.position.distance_squared(target2.position) <= 750 ** 2):
                     sleep(0.1)
                     castE1(game, minion.position)
@@ -229,8 +235,9 @@ def laneclear(game, mode=0):
         if (mode == 0 and lane_clear_with_q) or (mode == 1 and lasthit_with_q):
             target = TargetSelector(game, [*game.minions, *game.jungles], 600)
             if target:
-                me.Q.MoveAndTrigger(game.WorldToScreen(target.position))
+                MoveAndTrigger("q", game.WorldToScreen(target.position))
                 sleep(0.02)
+                resetAtk()
 
 
 def Vippro_update(game, ui):

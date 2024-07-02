@@ -1,6 +1,9 @@
 from Vippro import *
 from utils.calc import *
+from ctypes import windll
+from win32api import GetCursorPos
 from time import sleep
+from mouse import right_click
 
 Vippro_script_info = {
     "script": "Orbwalk",
@@ -67,6 +70,9 @@ moveTimer = 0.0
 humanizer = 0.0
 c_atk_speed = 0
 
+def resetAtk():
+    global attackTimer
+    attackTimer = 0.
 
 def Vippro_update(game, ui):
     global key_orbwalk, laneclear_key, lasthit_key
@@ -84,31 +90,28 @@ def Vippro_update(game, ui):
         cast_delay = me.GetCastDelay(c_atk_speed)
 
         if game.IsKeyDown(key_orbwalk):
-            if press_champ_only_key:
-                game.KeyDown(champ_only_key)
-
             game.KeyDown(24)
 
             target = get_best_target_in_range(me, game.champs)
 
             if game.gameTime > attackTimer and target:
                 pos = game.WorldToScreen(target.position)
-                old_pos = GetCursor()
-                MoveCursor(pos)
-                game.PressRightClick()
+                old_pos = GetCursorPos()
+                windll.user32.SetCursorPos(int(pos.x), int(pos.y))
+                right_click()
+                if me.name == "zeri":
+                    MoveAndTrigger("q", pos)
                 attackTimer = game.gameTime + atk_delay + (kite_ping / 2000.0)
                 moveTimer = game.gameTime + cast_delay + (kite_ping / 2000.0)
                 sleep(0.005)
-                MoveCursor(old_pos)
+                windll.user32.SetCursorPos(old_pos[0], old_pos[1])
             else:
                 if game.gameTime > humanizer:
                     if game.gameTime > moveTimer:
-                        game.PressRightClick()
+                        right_click()
                     humanizer = game.gameTime + (click_speed / 1000.0)
 
         elif game.IsKeyDown(laneclear_key):
-            if press_champ_only_key:
-                game.KeyDown(champ_only_key)
             # Lock camera
             game.KeyDown(59)
             game.KeyDown(24)
@@ -117,24 +120,22 @@ def Vippro_update(game, ui):
 
             if game.gameTime > attackTimer and target:
                 pos = game.WorldToScreen(target.position)
-                old_pos = GetCursor()
-                MoveCursor(pos)
-                if press_champ_only_key:
-                    game.KeyUp(champ_only_key)
-                game.PressRightClick()
+                old_pos = GetCursorPos()
+                windll.user32.SetCursorPos(int(pos.x), int(pos.y))
+                right_click()
+                if me.name == "zeri":
+                    MoveAndTrigger("q", pos)
                 attackTimer = game.gameTime + atk_delay + (kite_ping / 2000.0)
                 moveTimer = game.gameTime + cast_delay + (kite_ping / 2000.0)
                 sleep(0.005)
-                MoveCursor(old_pos)
+                windll.user32.SetCursorPos(old_pos[0], old_pos[1])
             else:
                 if game.gameTime > humanizer:
                     if game.gameTime > moveTimer:
-                        game.PressRightClick()
+                        right_click()
                     humanizer = game.gameTime + (click_speed / 1000.0)
 
         elif game.IsKeyDown(lasthit_key):
-            if press_champ_only_key:
-                game.KeyDown(champ_only_key)
             # Lock camera
             game.KeyDown(59)
             game.KeyDown(24)
@@ -143,25 +144,22 @@ def Vippro_update(game, ui):
 
             if game.gameTime > attackTimer and target:
                 pos = game.WorldToScreen(target.position)
-                old_pos = GetCursor()
-                MoveCursor(pos)
-                if press_champ_only_key:
-                    game.KeyUp(champ_only_key)
-                game.PressRightClick()
+                old_pos = GetCursorPos()
+                windll.user32.SetCursorPos(int(pos.x), int(pos.y))
+                right_click()
+                if me.name == "zeri":
+                    MoveAndTrigger("q", pos)
                 attackTimer = game.gameTime + atk_delay + (kite_ping / 2000.0)
                 moveTimer = game.gameTime + cast_delay + (kite_ping / 2000.0)
                 sleep(0.005)
-                MoveCursor(old_pos)
+                windll.user32.SetCursorPos(old_pos[0], old_pos[1])
             else:
                 if game.gameTime > humanizer:
                     if game.gameTime > moveTimer:
-                        game.PressRightClick()
+                        right_click()
                     humanizer = game.gameTime + (click_speed / 1000.0)
 
         else:
             # Unlock camera
             game.KeyUp(59)
             game.KeyUp(24)
-
-            if press_champ_only_key:
-                game.KeyUp(champ_only_key)

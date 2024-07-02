@@ -1,6 +1,8 @@
 from Vippro import *
 from utils.calc import *
+from utils.input import *
 from time import sleep
+from orbwalking import resetAtk
 
 Vippro_script_info = {
     "script": "Jayce",
@@ -37,18 +39,18 @@ def QECombo(game, me):
         if target:
             predict = predict_pos(game, target, 0.1)
             if (me.position.distance_squared(predict) <= pow(1750, 2)):
-                me.Q.MoveAndTrigger(game.WorldToScreen(predict))
-                sleep(0.005)
-                me.E.MoveAndTrigger(game.WorldToScreen(me.position))
-                sleep(0.1)
+                MoveAndTrigger("q", game.WorldToScreen(predict))
+                sleep(0.01)
+                MoveAndTrigger("e", game.WorldToScreen(me.position))
+                resetAtk()
 
 
 def FreeQECombo(game, me):
     if me.Q.IsReady(game.gameTime) and me.E.IsReady(game.gameTime) and me.Q.name == "jayceshockblast" and me.E.name == "jayceaccelerationgate":
-        me.Q.MoveAndTrigger(game.GetCursor())
-        sleep(0.005)
-        me.E.MoveAndTrigger(game.WorldToScreen(me.position))
-        sleep(0.1)
+        MoveAndTrigger("q", game.GetCursor())
+        sleep(0.01)
+        MoveAndTrigger("e", game.WorldToScreen(me.position))
+        resetAtk()
 
 
 def Vippro_update(game, ui):

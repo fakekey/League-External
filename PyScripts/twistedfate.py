@@ -1,6 +1,8 @@
 from Vippro import *
 from utils.calc import *
+from utils.input import *
 from time import sleep
+from orbwalking import resetAtk
 
 Vippro_script_info = {
     "script": "Twistedfate",
@@ -15,7 +17,7 @@ red_key = 3
 gold_key = 4
 
 
-use_q_in_combo = True
+use_q_in_combo = False
 use_w_in_combo = True
 
 
@@ -28,7 +30,7 @@ def Vippro_load_cfg(cfg):
     red_key = cfg.GetInt("red_key", 3)
     gold_key = cfg.GetInt("gold_key", 4)
     combo_mode = cfg.GetInt("combo_mode", 0)
-    use_q_in_combo = cfg.GetBool("use_q_in_combo", True)
+    use_q_in_combo = cfg.GetBool("use_q_in_combo", False)
     use_w_in_combo = cfg.GetBool("use_w_in_combo", True)
 
 
@@ -70,25 +72,25 @@ def Vippro_draw_settings(game, ui):
 def keyBlue(game, me):
     if me.isAlive and me.W.IsReady(game.gameTime):
         if me.W.name == "pickacard":
-            me.W.Trigger(True)
+            Trigger("w", True)
         if me.W.name == "bluecardlock":
-            me.W.Trigger(False)
+            Trigger("w", False)
 
 
 def keyRed(game, me):
     if me.isAlive and me.W.IsReady(game.gameTime):
         if me.W.name == "pickacard":
-            me.W.Trigger(True)
+            Trigger("w", True)
         if me.W.name == "redcardlock":
-            me.W.Trigger(False)
+            Trigger("w", False)
 
 
 def keyGold(game, me):
     if me.isAlive and me.W.IsReady(game.gameTime):
         if me.W.name == "pickacard":
-            me.W.Trigger(True)
+            Trigger("w", True)
         if me.W.name == "goldcardlock":
-            me.W.Trigger(False)
+            Trigger("w", False)
 
 
 def combo(game, me):
@@ -99,7 +101,8 @@ def combo(game, me):
         if target:
             pos = predict_pos(game, target, 1450 / 10000)
             if pos and me.position.distance_squared(pos) <= 1300**2:
-                me.Q.MoveAndTrigger(game.WorldToScreen(pos))
+                MoveAndTrigger("q", game.WorldToScreen(pos))
+                resetAtk()
                 return
 
     if me.isAlive and me.W.IsReady(game.gameTime) and use_w_in_combo:

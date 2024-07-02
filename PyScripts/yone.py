@@ -1,6 +1,8 @@
 from Vippro import *
 from utils.calc import *
 from time import sleep
+from utils.input import *
+from orbwalking import resetAtk
 
 Vippro_script_info = {
     "script": "Yone",
@@ -70,7 +72,8 @@ def combo(game):
         if target:
             pos = predict_pos(game, target, 450 / 1500)
             if pos and me.position.distance_squared(pos) <= 450**2:
-                me.Q.MoveAndTrigger(game.WorldToScreen(pos))
+                MoveAndTrigger("q", game.WorldToScreen(pos))
+                resetAtk()
                 return
 
     if (
@@ -83,14 +86,16 @@ def combo(game):
         if target:
             pos = predict_pos(game, target, 1050 / 1500)
             if pos and me.position.distance_squared(pos) <= 1050**2:
-                me.Q.MoveAndTrigger(game.WorldToScreen(pos))
+                MoveAndTrigger("q", game.WorldToScreen(pos))
+                resetAtk()
                 return
     if me.isAlive and me.W.IsReady(game.gameTime) and use_w_in_combo:
         target = get_best_target_in_range(me, game.champs, 700)
         if target:
             pos = predict_pos(game, target, 700 / 1800)
             if pos and me.position.distance_squared(pos) <= 700**2:
-                me.W.MoveAndTrigger(game.WorldToScreen(pos))
+                MoveAndTrigger("w", game.WorldToScreen(pos))
+                resetAtk()
                 return
 
 
@@ -102,7 +107,8 @@ def r_trigger(game):
         if target:
             pos = predict_pos(game, target, 1000 / 1500)
             if pos and me.position.distance_squared(pos) <= 950**2:
-                me.R.MoveAndTrigger(game.WorldToScreen(pos))
+                MoveAndTrigger("r", game.WorldToScreen(pos))
+                resetAtk()
                 return
 
 

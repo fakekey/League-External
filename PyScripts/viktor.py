@@ -1,6 +1,8 @@
 from Vippro import *
 from utils.calc import *
+from utils.input import *
 from time import sleep
+from orbwalking import resetAtk
 
 Vippro_script_info = {
     "script": "Viktor",
@@ -57,15 +59,15 @@ def Vippro_draw_settings(game, ui):
 
 humanizer = 0.0
 
-
 def combo(game):
-    global use_q_in_combo, use_e_in_combo, use_r_in_combo
+    global use_q_in_combo, use_e_in_combo, use_r_in_combo, humanizer
 
     me = game.player
     if me.isAlive and me.Q.IsReady(game.gameTime) and use_q_in_combo:
         target = get_best_target_in_range(me, game.champs, me.Q.info.castRange)
         if target:
-            me.Q.MoveAndTrigger(game.WorldToScreen(target.position))
+            MoveAndTrigger("q", game.WorldToScreen(target.position))
+            resetAtk()
             return
 
     if me.isAlive and me.E.IsReady(game.gameTime) and use_e_in_combo:
@@ -74,19 +76,24 @@ def combo(game):
             if me.position.distance(target.position) < e_range:
                 prediction = predict_pos(game, target, 0.1)
                 if prediction:
-                    me.E.Cast(
+                    Cast(
+                        "e",
                         game.WorldToScreen(target.position),
                         game.WorldToScreen(prediction),
                     )
+                    resetAtk()
             elif me.position.distance(target.position) < e_range + e_range:
                 castStartPos = me.position.add(
                     target.position.sub(me.position).normalize().scale(e_range)
                 )
                 prediction = predict_pos(game, target, 0.1)
                 if prediction:
-                    me.E.Cast(
-                        game.WorldToScreen(castStartPos), game.WorldToScreen(prediction)
+                    Cast(
+                        "e",
+                        game.WorldToScreen(castStartPos),
+                        game.WorldToScreen(prediction),
                     )
+                    resetAtk()
     if (
         me.isAlive
         and me.R.IsReady(game.gameTime)
@@ -100,7 +107,8 @@ def combo(game):
                 prediction
                 and me.position.distance_squared(prediction) <= me.R.info.castRange**2
             ):
-                me.R.MoveAndTrigger(game.WorldToScreen(prediction))
+                MoveAndTrigger("r", game.WorldToScreen(prediction))
+                resetAtk()
                 humanizer = game.gameTime + 1.0
 
 

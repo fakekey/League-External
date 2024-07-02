@@ -1,6 +1,8 @@
 from Vippro import *
 from utils.calc import *
+from utils.input import *
 from time import sleep
+from orbwalking import resetAtk
 
 Vippro_script_info = {
     "script": "Xerath",
@@ -64,7 +66,7 @@ charge_start_time = 0.0
 
 def charge_q(me, game_time):
     global charge_start_time
-    me.Q.Trigger(True)
+    Trigger("q", True)
     charge_start_time = game_time
 
 
@@ -100,14 +102,16 @@ def combo(game):
             pos = predict_pos(game, target, 0.528)
             if me.position.distance(pos) <= current_q_range - 80:
                 if castingQ(me):
-                    me.Q.MoveAndRelease(game.WorldToScreen(pos))
+                    MoveAndRelease("q", game.WorldToScreen(pos))
+                    resetAtk()
 
     if me.isAlive and me.W.IsReady(game.gameTime) and use_w_in_combo:
         target = get_best_target_in_range(me, game.champs, me.W.info.castRange)
         if target:
             pos = predict_pos(game, target, (1000 / 9999999) + 0.3)
             if me.position.distance(pos) <= 1100:
-                me.W.MoveAndTrigger(game.WorldToScreen(pos))
+                MoveAndTrigger("w", game.WorldToScreen(pos))
+                resetAtk()
 
     if me.isAlive and me.E.IsReady(game.gameTime) and use_e_in_combo:
         target = get_best_target_in_range(me, game.champs, me.E.info.castRange)
@@ -118,7 +122,8 @@ def combo(game):
             if me.position.distance(pos) <= 950 and not is_collisioned(
                 game, target, "minion", me.E.info.width
             ):
-                me.E.MoveAndTrigger(game.WorldToScreen(pos))
+                MoveAndTrigger("e", game.WorldToScreen(pos))
+                resetAtk()
 
 
 def r_trigger(game):
@@ -129,7 +134,8 @@ def r_trigger(game):
         if target:
             pos = predict_pos(game, target, 0.26)
             if pos and me.position.distance_squared(pos) <= 5000**2:
-                me.R.MoveAndTrigger(game.WorldToScreen(pos))
+                MoveAndTrigger("r", game.WorldToScreen(pos))
+                resetAtk()
 
 
 def Vippro_update(game, ui):
