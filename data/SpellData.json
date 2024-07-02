@@ -300,6 +300,21 @@
         "projectDestination": false
     },
     {
+        "name": "{0ae80f79}",
+        "nameAlt": "AhriSkin86Manager",
+        "icon": "",
+        "flags": 0,
+        "delay": 0.5,
+        "castRange": 0.0,
+        "castRadius": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "speed": 0.0,
+        "travelTime": 0.0,
+        "type": "Unknown",
+        "projectDestination": false
+    },
+    {
         "name": "{112db766}",
         "nameAlt": "AhriPassiveCounter",
         "icon": "Icons_Ahri_Passive",
@@ -7020,66 +7035,6 @@
         "projectDestination": false
     },
     {
-        "name": "CarpetBombMega",
-        "nameAlt": "CarpetBombMega",
-        "icon": "Corki_Valkyrie_Mega",
-        "flags": 6154,
-        "delay": 0.5,
-        "castRange": 2000.0,
-        "castRadius": 100.0,
-        "width": 160.0,
-        "height": 0.0,
-        "speed": 700.0,
-        "travelTime": 0.0,
-        "type": "Location",
-        "projectDestination": false
-    },
-    {
-        "name": "DangerZone",
-        "nameAlt": "DangerZone",
-        "icon": "Corki_ThePackage",
-        "flags": 6154,
-        "delay": 0.25,
-        "castRange": 900.0,
-        "castRadius": 250.0,
-        "width": 0.0,
-        "height": 0.0,
-        "speed": 20.0,
-        "travelTime": 0.0,
-        "type": "Area",
-        "projectDestination": false
-    },
-    {
-        "name": "DangerZoneLoadedTarget",
-        "nameAlt": "DangerZoneLoadedTarget",
-        "icon": "Corki_Valkyrie",
-        "flags": 0,
-        "delay": 0.5,
-        "castRange": 0.0,
-        "castRadius": 0.0,
-        "width": 0.0,
-        "height": 0.0,
-        "speed": 0.0,
-        "travelTime": 0.0,
-        "type": "Unknown",
-        "projectDestination": false
-    },
-    {
-        "name": "CarpetBomb",
-        "nameAlt": "CarpetBomb",
-        "icon": "Corki_Valkyrie",
-        "flags": 6154,
-        "delay": 0.5,
-        "castRange": 600.0,
-        "castRadius": 100.0,
-        "width": 160.0,
-        "height": 0.0,
-        "speed": 700.0,
-        "travelTime": 0.0,
-        "type": "Location",
-        "projectDestination": false
-    },
-    {
         "name": "GGSpray",
         "nameAlt": "GGSpray",
         "icon": "Annie_Incinerate",
@@ -7107,6 +7062,36 @@
         "speed": 902.0,
         "travelTime": 0.0,
         "type": "Cone",
+        "projectDestination": false
+    },
+    {
+        "name": "DangerZone",
+        "nameAlt": "DangerZone",
+        "icon": "Corki_ThePackage",
+        "flags": 6154,
+        "delay": 0.25,
+        "castRange": 900.0,
+        "castRadius": 250.0,
+        "width": 0.0,
+        "height": 0.0,
+        "speed": 20.0,
+        "travelTime": 0.0,
+        "type": "Area",
+        "projectDestination": false
+    },
+    {
+        "name": "CarpetBomb",
+        "nameAlt": "CarpetBomb",
+        "icon": "Corki_Valkyrie",
+        "flags": 6154,
+        "delay": 0.5,
+        "castRange": 600.0,
+        "castRadius": 100.0,
+        "width": 160.0,
+        "height": 0.0,
+        "speed": 700.0,
+        "travelTime": 0.0,
+        "type": "Location",
         "projectDestination": false
     },
     {
@@ -12746,7 +12731,7 @@
         "height": 100.0,
         "speed": 1400.0,
         "travelTime": 0.4000000059604645,
-        "type": "Area",
+        "type": "Unknown",
         "projectDestination": false
     },
     {
@@ -12761,7 +12746,7 @@
         "height": 100.0,
         "speed": 1400.0,
         "travelTime": 0.4000000059604645,
-        "type": "Area",
+        "type": "Unknown",
         "projectDestination": false
     },
     {
@@ -12791,7 +12776,7 @@
         "height": 100.0,
         "speed": 1200.0,
         "travelTime": 0.0,
-        "type": "Area",
+        "type": "Unknown",
         "projectDestination": false
     },
     {
@@ -12806,7 +12791,7 @@
         "height": 100.0,
         "speed": 1200.0,
         "travelTime": 0.0,
-        "type": "Area",
+        "type": "Unknown",
         "projectDestination": false
     },
     {
@@ -13212,6 +13197,21 @@
         "speed": 0.0,
         "travelTime": 2.25,
         "type": "Location",
+        "projectDestination": false
+    },
+    {
+        "name": "{eb21ba5a}",
+        "nameAlt": "HoL_Clickable_Spell",
+        "icon": "",
+        "flags": 7183,
+        "delay": 0.0,
+        "castRange": 3000.0,
+        "castRadius": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "speed": 0.0,
+        "travelTime": 0.0,
+        "type": "Unknown",
         "projectDestination": false
     },
     {
@@ -21810,6 +21810,21 @@
         "projectDestination": false
     },
     {
+        "name": "{a2b14185}",
+        "nameAlt": "LeblancSkin55Manager",
+        "icon": "",
+        "flags": 0,
+        "delay": 0.5,
+        "castRange": 0.0,
+        "castRadius": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "speed": 0.0,
+        "travelTime": 0.0,
+        "type": "Unknown",
+        "projectDestination": false
+    },
+    {
         "name": "LeblancRStealth",
         "nameAlt": "LeblancRStealth",
         "icon": "LeBlancR",
@@ -28980,6 +28995,81 @@
         "projectDestination": false
     },
     {
+        "name": "{36c1279e}",
+        "nameAlt": "PantheonEResists",
+        "icon": "Pantheon_E2",
+        "flags": 1029,
+        "delay": 0.25,
+        "castRange": 650.0,
+        "castRadius": 210.0,
+        "width": 0.0,
+        "height": 0.0,
+        "speed": 0.0,
+        "travelTime": 0.0,
+        "type": "Self",
+        "projectDestination": false
+    },
+    {
+        "name": "PantheonEShieldSlam",
+        "nameAlt": "PantheonEShieldSlam",
+        "icon": "Pantheon_Q2",
+        "flags": 6154,
+        "delay": 0.25,
+        "castRange": 700.0,
+        "castRadius": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "speed": 0.0,
+        "travelTime": 0.0,
+        "type": "Location",
+        "projectDestination": false
+    },
+    {
+        "name": "PantheonE",
+        "nameAlt": "PantheonE",
+        "icon": "Pantheon_E1",
+        "flags": 6154,
+        "delay": 0.0,
+        "castRange": 400.0,
+        "castRadius": 210.0,
+        "width": 0.0,
+        "height": 0.0,
+        "speed": 0.0,
+        "travelTime": 0.0,
+        "type": "Direction",
+        "projectDestination": false
+    },
+    {
+        "name": "PantheonE2",
+        "nameAlt": "PantheonE2",
+        "icon": "Pantheon_E1",
+        "flags": 0,
+        "delay": 0.25,
+        "castRange": 400.0,
+        "castRadius": 210.0,
+        "width": 0.0,
+        "height": 0.0,
+        "speed": 0.0,
+        "travelTime": 0.0,
+        "type": "Self",
+        "projectDestination": false
+    },
+    {
+        "name": "PantheonESpeed",
+        "nameAlt": "PantheonESpeed",
+        "icon": "Pantheon_E2",
+        "flags": 1029,
+        "delay": 0.25,
+        "castRange": 650.0,
+        "castRadius": 210.0,
+        "width": 0.0,
+        "height": 0.0,
+        "speed": 0.0,
+        "travelTime": 0.0,
+        "type": "Self",
+        "projectDestination": false
+    },
+    {
         "name": "PantheonRMissile",
         "nameAlt": "PantheonRMissile",
         "icon": "",
@@ -29067,66 +29157,6 @@
         "speed": 20.0,
         "travelTime": 0.0,
         "type": "Area",
-        "projectDestination": false
-    },
-    {
-        "name": "PantheonEShieldSlam",
-        "nameAlt": "PantheonEShieldSlam",
-        "icon": "Pantheon_Q2",
-        "flags": 6154,
-        "delay": 0.25,
-        "castRange": 700.0,
-        "castRadius": 0.0,
-        "width": 0.0,
-        "height": 0.0,
-        "speed": 0.0,
-        "travelTime": 0.0,
-        "type": "Location",
-        "projectDestination": false
-    },
-    {
-        "name": "PantheonE",
-        "nameAlt": "PantheonE",
-        "icon": "Pantheon_E1",
-        "flags": 6154,
-        "delay": 0.0,
-        "castRange": 400.0,
-        "castRadius": 210.0,
-        "width": 0.0,
-        "height": 0.0,
-        "speed": 0.0,
-        "travelTime": 0.0,
-        "type": "Direction",
-        "projectDestination": false
-    },
-    {
-        "name": "PantheonE2",
-        "nameAlt": "PantheonE2",
-        "icon": "Pantheon_E1",
-        "flags": 0,
-        "delay": 0.25,
-        "castRange": 400.0,
-        "castRadius": 210.0,
-        "width": 0.0,
-        "height": 0.0,
-        "speed": 0.0,
-        "travelTime": 0.0,
-        "type": "Self",
-        "projectDestination": false
-    },
-    {
-        "name": "PantheonESpeed",
-        "nameAlt": "PantheonESpeed",
-        "icon": "Pantheon_E2",
-        "flags": 1029,
-        "delay": 0.25,
-        "castRange": 650.0,
-        "castRadius": 210.0,
-        "width": 0.0,
-        "height": 0.0,
-        "speed": 0.0,
-        "travelTime": 0.0,
-        "type": "Self",
         "projectDestination": false
     },
     {
@@ -36386,7 +36416,7 @@
         "height": 100.0,
         "speed": 1200.0,
         "travelTime": 0.0,
-        "type": "Location",
+        "type": "Unknown",
         "projectDestination": true
     },
     {
@@ -48156,7 +48186,7 @@
         "flags": 6154,
         "delay": 0.009999999776482582,
         "castRange": 25000.0,
-        "castRadius": 200.0,
+        "castRadius": 0.0,
         "width": 0.0,
         "height": 81.0,
         "speed": 0.0,
@@ -48761,7 +48791,7 @@
         "height": 0.0,
         "speed": 0.0,
         "travelTime": 0.0,
-        "type": "Location",
+        "type": "Self",
         "projectDestination": false
     },
     {
@@ -48776,7 +48806,7 @@
         "height": 0.0,
         "speed": 0.0,
         "travelTime": 0.0,
-        "type": "Location",
+        "type": "Self",
         "projectDestination": false
     },
     {
@@ -48791,7 +48821,7 @@
         "height": 0.0,
         "speed": 8700.0,
         "travelTime": 0.0,
-        "type": "Location",
+        "type": "Self",
         "projectDestination": false
     },
     {
@@ -49552,7 +49582,7 @@
         "delay": 0.5,
         "castRange": 950.0,
         "castRadius": 0.0,
-        "width": 200.0,
+        "width": 0.0,
         "height": 100.0,
         "speed": 1500.0,
         "travelTime": 0.0,
@@ -49567,7 +49597,7 @@
         "delay": 0.3499999940395355,
         "castRange": 1.0,
         "castRadius": 0.0,
-        "width": 200.0,
+        "width": 0.0,
         "height": 0.0,
         "speed": 0.0,
         "travelTime": 0.0,
@@ -51536,7 +51566,7 @@
         "height": 60.0,
         "speed": 1700.0,
         "travelTime": 0.0,
-        "type": "Area",
+        "type": "Unknown",
         "projectDestination": false
     },
     {
@@ -51566,7 +51596,7 @@
         "height": 60.0,
         "speed": 1600.0,
         "travelTime": 0.47999998927116394,
-        "type": "Area",
+        "type": "Unknown",
         "projectDestination": false
     },
     {
@@ -51581,7 +51611,7 @@
         "height": 60.0,
         "speed": 1600.0,
         "travelTime": 0.47999998927116394,
-        "type": "Area",
+        "type": "Unknown",
         "projectDestination": false
     },
     {
@@ -51641,7 +51671,7 @@
         "height": 60.0,
         "speed": 1500.0,
         "travelTime": 1.2000000476837158,
-        "type": "Area",
+        "type": "Unknown",
         "projectDestination": false
     },
     {

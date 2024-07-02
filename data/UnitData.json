@@ -195,8 +195,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Minion_Summon",
-            "Unit_Minion_Summon_Large",
-            "Unit_Minion"
+            "Unit_Minion",
+            "Unit_Minion_Summon_Large"
         ]
     },
     {
@@ -542,9 +542,9 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
-            "Unit_Special"
+            "Unit_Special",
+            "Unit_Special_TurretIgnores"
         ]
     },
     {
@@ -949,7 +949,7 @@
         "baseMoveSpeed": 325.0,
         "attackRange": 650.0,
         "attackSpeed": 0.6809999942779541,
-        "attackSpeedRatio": 0.5680000185966492,
+        "attackSpeedRatio": 0.593999981880188,
         "acquisitionRange": 800.0,
         "selectionRadius": 120.0,
         "pathingRadius": 35.0,
@@ -1049,8 +1049,8 @@
         "basicAtkWindup": 0.180000002682209,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Epic"
+            "Unit_Monster_Epic",
+            "Unit_Monster"
         ]
     },
     {
@@ -1087,8 +1087,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Structure_Turret",
-            "Unit_Structure",
-            "Unit_Structure_Turret_Outer"
+            "Unit_Structure_Turret_Outer",
+            "Unit_Structure"
         ]
     },
     {
@@ -1145,8 +1145,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Ward",
-            "Unit_Special_UntargetableBySpells",
-            "Unit_Plant"
+            "Unit_Plant",
+            "Unit_Special_UntargetableBySpells"
         ]
     },
     {
@@ -1164,8 +1164,8 @@
         "basicAtkWindup": 0.2082999974489212,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Minion_AttackMove_Inactive",
             "Unit_Ward",
+            "Unit_Minion_AttackMove_Inactive",
             "Unit_Minion",
             "Unit_Plant"
         ]
@@ -1221,8 +1221,8 @@
         "basicAtkWindup": 0.2082999974489212,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TeleportTarget",
-            "Unit_Special"
+            "Unit_Special",
+            "Unit_Special_TeleportTarget"
         ]
     },
     {
@@ -1404,9 +1404,9 @@
         "basicAtkWindup": 0.37199999690055846,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
             "Unit_Special",
+            "Unit_Special_TurretIgnores",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -1425,9 +1425,9 @@
         "basicAtkWindup": 0.37199999690055846,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
             "Unit_Special",
+            "Unit_Special_TurretIgnores",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -1446,9 +1446,9 @@
         "basicAtkWindup": 0.37199999690055846,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
             "Unit_Special",
+            "Unit_Special_TurretIgnores",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -1467,9 +1467,9 @@
         "basicAtkWindup": 0.37199999690055846,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
             "Unit_Special",
+            "Unit_Special_TurretIgnores",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -1488,9 +1488,9 @@
         "basicAtkWindup": 0.37199999690055846,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
             "Unit_Special",
+            "Unit_Special_TurretIgnores",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -1509,9 +1509,9 @@
         "basicAtkWindup": 0.37199999690055846,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
             "Unit_Special",
+            "Unit_Special_TurretIgnores",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -1530,9 +1530,9 @@
         "basicAtkWindup": 0.37199999690055846,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
             "Unit_Special",
+            "Unit_Special_TurretIgnores",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -1551,9 +1551,9 @@
         "basicAtkWindup": 0.37199999690055846,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
             "Unit_Special",
+            "Unit_Special_TurretIgnores",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -1590,9 +1590,9 @@
         "basicAtkWindup": 0.37199999690055846,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
             "Unit_Special",
+            "Unit_Special_TurretIgnores",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -1611,9 +1611,9 @@
         "basicAtkWindup": 0.37199999690055846,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
             "Unit_Special",
+            "Unit_Special_TurretIgnores",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -1668,9 +1668,9 @@
         "basicAtkWindup": 0.37199999690055846,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
             "Unit_Special",
+            "Unit_Special_TurretIgnores",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -1816,14 +1816,14 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_LaneMinionIgnores",
+            "Unit_Champion",
             "Unit_Special_TeleportTarget",
             "Unit_Special_TurretIgnores",
-            "Unit_Champion_Clone",
-            "Unit_Special_MonsterIgnores",
             "Unit_Special",
             "Unit_Special_EpicMonsterIgnores",
-            "Unit_Champion"
+            "Unit_Special_MonsterIgnores",
+            "Unit_Special_LaneMinionIgnores",
+            "Unit_Champion_Clone"
         ]
     },
     {
@@ -2149,8 +2149,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Structure_Turret",
-            "Unit_Structure",
-            "Unit_Structure_Turret_Shrine"
+            "Unit_Structure_Turret_Shrine",
+            "Unit_Structure"
         ]
     },
     {
@@ -2259,8 +2259,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Structure_Turret",
-            "Unit_Structure",
-            "Unit_Structure_Turret_Shrine"
+            "Unit_Structure_Turret_Shrine",
+            "Unit_Structure"
         ]
     },
     {
@@ -2404,9 +2404,9 @@
         "basicAtkWindup": 0.4912500010244548,
         "basicAtkWindupModify": 0.0,
         "tags": [
+            "Unit_Minion",
             "Unit_Minion_Lane_Melee",
-            "Unit_Minion_Lane",
-            "Unit_Minion"
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -2424,9 +2424,9 @@
         "basicAtkWindup": 0.31333333253860474,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Minion_Lane",
             "Unit_Minion_Lane_Ranged",
-            "Unit_Minion"
+            "Unit_Minion",
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -2445,8 +2445,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Minion_Lane_Siege",
-            "Unit_Minion_Lane",
-            "Unit_Minion"
+            "Unit_Minion",
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -2464,9 +2464,9 @@
         "basicAtkWindup": 0.3472222084248513,
         "basicAtkWindupModify": 0.0,
         "tags": [
+            "Unit_Minion",
             "Unit_Minion_Lane_Super",
-            "Unit_Minion_Lane",
-            "Unit_Minion"
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -2540,9 +2540,9 @@
         "basicAtkWindup": 0.4912500010244548,
         "basicAtkWindupModify": 0.0,
         "tags": [
+            "Unit_Minion",
             "Unit_Minion_Lane_Melee",
-            "Unit_Minion_Lane",
-            "Unit_Minion"
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -2560,9 +2560,9 @@
         "basicAtkWindup": 0.31333333253860474,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Minion_Lane",
             "Unit_Minion_Lane_Ranged",
-            "Unit_Minion"
+            "Unit_Minion",
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -2581,8 +2581,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Minion_Lane_Siege",
-            "Unit_Minion_Lane",
-            "Unit_Minion"
+            "Unit_Minion",
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -2600,9 +2600,9 @@
         "basicAtkWindup": 0.3472222084248513,
         "basicAtkWindupModify": 0.0,
         "tags": [
+            "Unit_Minion",
             "Unit_Minion_Lane_Super",
-            "Unit_Minion_Lane",
-            "Unit_Minion"
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -2718,6 +2718,25 @@
         ]
     },
     {
+        "name": "hol_clickable",
+        "healthBarHeight": 60.0,
+        "baseMoveSpeed": 0.0,
+        "attackRange": 0.0,
+        "attackSpeed": 0.0,
+        "attackSpeedRatio": 0.0,
+        "acquisitionRange": 50.0,
+        "selectionRadius": 90.0,
+        "pathingRadius": 50.0,
+        "gameplayRadius": 65.0,
+        "basicAtkMissileSpeed": 0.0,
+        "basicAtkWindup": 0.2082999974489212,
+        "basicAtkWindupModify": 0.0,
+        "tags": [
+            "Unit_Special",
+            "Unit_IsolationNonImpacting"
+        ]
+    },
+    {
         "name": "hwei",
         "healthBarHeight": 100.0,
         "baseMoveSpeed": 330.0,
@@ -2769,9 +2788,9 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Special_TeleportTarget",
-            "Unit_IsolationNonImpacting",
             "Unit_Special_KPMinion",
             "Unit_Special_TurretIgnores",
+            "Unit_IsolationNonImpacting",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -2790,8 +2809,8 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Structure",
-            "Unit_Structure_Inhibitor"
+            "Unit_Structure_Inhibitor",
+            "Unit_Structure"
         ]
     },
     {
@@ -2863,8 +2882,8 @@
         "basicAtkWindup": 0.19999999850988387,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Champion",
-            "Unit_Special_MonsterIgnores"
+            "Unit_Special_MonsterIgnores",
+            "Unit_Champion"
         ]
     },
     {
@@ -2883,9 +2902,9 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Minion_Summon",
-            "Unit_Special_MonsterIgnores",
+            "Unit_Minion",
             "Unit_Minion_Summon_Large",
-            "Unit_Minion"
+            "Unit_Special_MonsterIgnores"
         ]
     },
     {
@@ -2903,8 +2922,8 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
-            "Unit_Special"
+            "Unit_Special",
+            "Unit_Special_TurretIgnores"
         ]
     },
     {
@@ -2922,9 +2941,9 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
-            "Unit_Special"
+            "Unit_Special",
+            "Unit_Special_TurretIgnores"
         ]
     },
     {
@@ -2978,8 +2997,8 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TeleportTarget",
-            "Unit_Special"
+            "Unit_Special",
+            "Unit_Special_TeleportTarget"
         ]
     },
     {
@@ -3070,10 +3089,10 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Special_TeleportTarget",
-            "Unit_IsolationNonImpacting",
             "Unit_Special_TurretIgnores",
-            "Unit_Special_Trap",
             "Unit_Special",
+            "Unit_Special_Trap",
+            "Unit_IsolationNonImpacting",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -3183,9 +3202,9 @@
         "basicAtkWindup": 0.37199999690055846,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Minion_Summon",
             "Unit_Special_TeleportTarget",
             "Unit_Special_TurretIgnores",
+            "Unit_Minion_Summon",
             "Unit_Minion",
             "Unit_Special_UntargetableBySpells"
         ]
@@ -3404,9 +3423,9 @@
         "basicAtkWindup": 0.7065868130966041,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
             "Unit_Monster_Epic",
-            "Unit_KingPoro"
+            "Unit_KingPoro",
+            "Unit_Monster"
         ]
     },
     {
@@ -3643,9 +3662,9 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
-            "Unit_Special"
+            "Unit_Special",
+            "Unit_Special_TurretIgnores"
         ]
     },
     {
@@ -3989,9 +4008,9 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Minion_Summon",
-            "Unit_Special_Trap",
+            "Unit_Minion",
             "Unit_Special",
-            "Unit_Minion"
+            "Unit_Special_Trap"
         ]
     },
     {
@@ -4282,8 +4301,8 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Structure",
-            "Unit_Structure_Nexus"
+            "Unit_Structure_Nexus",
+            "Unit_Structure"
         ]
     },
     {
@@ -4338,10 +4357,10 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Special_TeleportTarget",
-            "Unit_IsolationNonImpacting",
             "Unit_Special_TurretIgnores",
-            "Unit_Special_Trap",
             "Unit_Special",
+            "Unit_Special_Trap",
+            "Unit_IsolationNonImpacting",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -4360,12 +4379,12 @@
         "basicAtkWindup": 0.25,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster_Camp",
-            "Unit_Monster",
-            "Unit_Monster_Large",
+            "Unit_Monster_RiftHerald",
             "Unit_Monster_Epic",
+            "Unit_Monster_Camp",
             "Unit_Special_Void",
-            "Unit_Monster_RiftHerald"
+            "Unit_Monster",
+            "Unit_Monster_Large"
         ]
     },
     {
@@ -4671,9 +4690,9 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
-            "Unit_Special"
+            "Unit_Special",
+            "Unit_Special_TurretIgnores"
         ]
     },
     {
@@ -4696,7 +4715,7 @@
     },
     {
         "name": "petaoshin",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 100.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -4732,7 +4751,7 @@
     },
     {
         "name": "petbaron",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 110.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -4768,7 +4787,7 @@
     },
     {
         "name": "petbigknifedog",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 105.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -4804,7 +4823,7 @@
     },
     {
         "name": "petbunny",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 90.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -4840,7 +4859,7 @@
     },
     {
         "name": "petchibiakali",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 85.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -4895,6 +4914,24 @@
     {
         "name": "petchibiekko",
         "healthBarHeight": 70.0,
+        "baseMoveSpeed": 350.0,
+        "attackRange": 0.0,
+        "attackSpeed": 0.0,
+        "attackSpeedRatio": 0.0,
+        "acquisitionRange": 0.0,
+        "selectionRadius": 0.0,
+        "pathingRadius": 50.0,
+        "gameplayRadius": 80.0,
+        "basicAtkMissileSpeed": 0.0,
+        "basicAtkWindup": 0.37199999690055846,
+        "basicAtkWindupModify": 0.0,
+        "tags": [
+            "Unit_"
+        ]
+    },
+    {
+        "name": "petchibiezreal",
+        "healthBarHeight": 77.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -5091,6 +5128,24 @@
         ]
     },
     {
+        "name": "petchibitristana",
+        "healthBarHeight": 70.0,
+        "baseMoveSpeed": 350.0,
+        "attackRange": 0.0,
+        "attackSpeed": 0.0,
+        "attackSpeedRatio": 0.0,
+        "acquisitionRange": 0.0,
+        "selectionRadius": 0.0,
+        "pathingRadius": 50.0,
+        "gameplayRadius": 80.0,
+        "basicAtkMissileSpeed": 0.0,
+        "basicAtkWindup": 0.37199999690055846,
+        "basicAtkWindupModify": 0.0,
+        "tags": [
+            "Unit_"
+        ]
+    },
+    {
         "name": "petchibivi",
         "healthBarHeight": 70.0,
         "baseMoveSpeed": 350.0,
@@ -5200,7 +5255,7 @@
     },
     {
         "name": "petdowsie",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 90.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -5218,7 +5273,7 @@
     },
     {
         "name": "petdssquid",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 110.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -5290,7 +5345,7 @@
     },
     {
         "name": "petelegantdragon",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 100.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -5326,7 +5381,7 @@
     },
     {
         "name": "petfenroar",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 85.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -5470,7 +5525,7 @@
     },
     {
         "name": "pethundun",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 90.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -5488,7 +5543,7 @@
     },
     {
         "name": "petjawdragon",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 100.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -5506,6 +5561,24 @@
     },
     {
         "name": "petkoala",
+        "healthBarHeight": 70.0,
+        "baseMoveSpeed": 350.0,
+        "attackRange": 0.0,
+        "attackSpeed": 0.0,
+        "attackSpeedRatio": 0.0,
+        "acquisitionRange": 0.0,
+        "selectionRadius": 0.0,
+        "pathingRadius": 50.0,
+        "gameplayRadius": 80.0,
+        "basicAtkMissileSpeed": 0.0,
+        "basicAtkWindup": 0.37199999690055846,
+        "basicAtkWindupModify": 0.0,
+        "tags": [
+            "Unit_"
+        ]
+    },
+    {
+        "name": "petleopardgecko",
         "healthBarHeight": 70.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
@@ -5668,7 +5741,7 @@
     },
     {
         "name": "petpupdragon",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 95.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -5686,7 +5759,7 @@
     },
     {
         "name": "petqiyanadog",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 100.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -5722,7 +5795,7 @@
     },
     {
         "name": "petscuttlecrab",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 100.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -5740,7 +5813,7 @@
     },
     {
         "name": "petsennabunny",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 90.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -5794,7 +5867,7 @@
     },
     {
         "name": "petsgshisa",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 110.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -5848,7 +5921,7 @@
     },
     {
         "name": "petspiritfox",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 100.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -5902,7 +5975,7 @@
     },
     {
         "name": "petumbra",
-        "healthBarHeight": 70.0,
+        "healthBarHeight": 95.0,
         "baseMoveSpeed": 350.0,
         "attackRange": 0.0,
         "attackSpeed": 0.0,
@@ -6187,9 +6260,9 @@
         "basicAtkWindup": 0.2082999974489212,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TeleportTarget",
+            "Unit_IsolationNonImpacting",
             "Unit_Special_Tunnel",
-            "Unit_IsolationNonImpacting"
+            "Unit_Special_TeleportTarget"
         ]
     },
     {
@@ -6333,8 +6406,8 @@
         "basicAtkWindup": 0.38416999876499175,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
-            "Unit_Special"
+            "Unit_Special",
+            "Unit_Special_TurretIgnores"
         ]
     },
     {
@@ -6479,11 +6552,11 @@
         "basicAtkWindup": 0.28802000004798173,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Minion_Summon",
             "Unit_Special_TeleportTarget",
-            "Unit_Special_Trap",
+            "Unit_Minion_Summon",
             "Unit_Special",
-            "Unit_Minion"
+            "Unit_Minion",
+            "Unit_Special_Trap"
         ]
     },
     {
@@ -6573,9 +6646,9 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
             "Unit_Special",
+            "Unit_Special_TurretIgnores",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -6811,8 +6884,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Structure_Turret",
-            "Unit_Structure",
-            "Unit_Structure_Turret_Shrine"
+            "Unit_Structure_Turret_Shrine",
+            "Unit_Structure"
         ]
     },
     {
@@ -6831,8 +6904,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Structure_Turret",
-            "Unit_Structure",
-            "Unit_Structure_Turret_Shrine"
+            "Unit_Structure_Turret_Shrine",
+            "Unit_Structure"
         ]
     },
     {
@@ -6851,8 +6924,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Structure_Turret",
-            "Unit_Structure",
-            "Unit_Structure_Turret_Shrine"
+            "Unit_Structure_Turret_Shrine",
+            "Unit_Structure"
         ]
     },
     {
@@ -6888,11 +6961,11 @@
         "basicAtkWindup": 0.17687499259598563,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster_Camp",
-            "Unit_Monster",
             "Unit_Monster_Baron",
             "Unit_Monster_Epic",
-            "Unit_Special_Void"
+            "Unit_Monster_Camp",
+            "Unit_Special_Void",
+            "Unit_Monster"
         ]
     },
     {
@@ -6948,9 +7021,9 @@
         "tags": [
             "Unit_Monster_Camp",
             "Unit_Monster",
-            "Unit_Monster_Buff",
             "Unit_Monster_Blue",
-            "Unit_Monster_Large"
+            "Unit_Monster_Large",
+            "Unit_Monster_Buff"
         ]
     },
     {
@@ -6968,9 +7041,9 @@
         "basicAtkWindup": 0.2912499898485841,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
+            "Unit_Monster_Blue",
             "Unit_Monster_Camp",
-            "Unit_Monster_Blue"
+            "Unit_Monster"
         ]
     },
     {
@@ -6988,9 +7061,9 @@
         "basicAtkWindup": 0.2912499898485841,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
+            "Unit_Monster_Blue",
             "Unit_Monster_Camp",
-            "Unit_Monster_Blue"
+            "Unit_Monster"
         ]
     },
     {
@@ -7026,9 +7099,9 @@
         "basicAtkWindup": 0.4912500010244548,
         "basicAtkWindupModify": 0.0,
         "tags": [
+            "Unit_Minion",
             "Unit_Minion_Lane_Melee",
-            "Unit_Minion_Lane",
-            "Unit_Minion"
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -7046,9 +7119,9 @@
         "basicAtkWindup": 0.31333333253860474,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Minion_Lane",
             "Unit_Minion_Lane_Ranged",
-            "Unit_Minion"
+            "Unit_Minion",
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -7067,8 +7140,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Minion_Lane_Siege",
-            "Unit_Minion_Lane",
-            "Unit_Minion"
+            "Unit_Minion",
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -7086,9 +7159,9 @@
         "basicAtkWindup": 0.3472222084248513,
         "basicAtkWindupModify": 0.0,
         "tags": [
+            "Unit_Minion",
             "Unit_Minion_Lane_Super",
-            "Unit_Minion_Lane",
-            "Unit_Minion"
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -7106,8 +7179,8 @@
         "basicAtkWindup": 0.180000002682209,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_Peaceful",
             "Unit_Monster_Crab",
+            "Unit_Special_Peaceful",
             "Unit_Monster_Camp",
             "Unit_Monster",
             "Unit_Monster_Large"
@@ -7146,10 +7219,10 @@
         "basicAtkWindup": 0.4000000059604645,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Camp",
             "Unit_Monster_Epic",
-            "Unit_Monster_Dragon"
+            "Unit_Monster_Camp",
+            "Unit_Monster_Dragon",
+            "Unit_Monster"
         ]
     },
     {
@@ -7167,10 +7240,10 @@
         "basicAtkWindup": 0.4000000059604645,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Camp",
             "Unit_Monster_Epic",
-            "Unit_Monster_Dragon"
+            "Unit_Monster_Camp",
+            "Unit_Monster_Dragon",
+            "Unit_Monster"
         ]
     },
     {
@@ -7188,10 +7261,10 @@
         "basicAtkWindup": 0.4000000059604645,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Camp",
             "Unit_Monster_Epic",
-            "Unit_Monster_Dragon"
+            "Unit_Monster_Camp",
+            "Unit_Monster_Dragon",
+            "Unit_Monster"
         ]
     },
     {
@@ -7209,10 +7282,10 @@
         "basicAtkWindup": 0.4000000059604645,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Camp",
             "Unit_Monster_Epic",
-            "Unit_Monster_Dragon"
+            "Unit_Monster_Camp",
+            "Unit_Monster_Dragon",
+            "Unit_Monster"
         ]
     },
     {
@@ -7230,10 +7303,10 @@
         "basicAtkWindup": 0.4000000059604645,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Camp",
             "Unit_Monster_Epic",
-            "Unit_Monster_Dragon"
+            "Unit_Monster_Camp",
+            "Unit_Monster_Dragon",
+            "Unit_Monster"
         ]
     },
     {
@@ -7251,10 +7324,10 @@
         "basicAtkWindup": 0.4000000059604645,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Camp",
             "Unit_Monster_Epic",
-            "Unit_Monster_Dragon"
+            "Unit_Monster_Camp",
+            "Unit_Monster_Dragon",
+            "Unit_Monster"
         ]
     },
     {
@@ -7272,10 +7345,10 @@
         "basicAtkWindup": 0.4000000059604645,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Camp",
             "Unit_Monster_Epic",
-            "Unit_Monster_Dragon"
+            "Unit_Monster_Camp",
+            "Unit_Monster_Dragon",
+            "Unit_Monster"
         ]
     },
     {
@@ -7311,10 +7384,10 @@
         "basicAtkWindup": 0.4000000059604645,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Camp",
             "Unit_Monster_Epic",
-            "Unit_Monster_Dragon"
+            "Unit_Monster_Camp",
+            "Unit_Monster_Dragon",
+            "Unit_Monster"
         ]
     },
     {
@@ -7332,10 +7405,10 @@
         "basicAtkWindup": 0.4000000059604645,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Camp",
             "Unit_Monster_Epic",
-            "Unit_Monster_Dragon"
+            "Unit_Monster_Camp",
+            "Unit_Monster_Dragon",
+            "Unit_Monster"
         ]
     },
     {
@@ -7461,10 +7534,10 @@
         "basicAtkWindup": 0.180000002682209,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Gromp",
             "Unit_Monster_Camp",
-            "Unit_Monster_Large"
+            "Unit_Monster_Large",
+            "Unit_Monster",
+            "Unit_Monster_Gromp"
         ]
     },
     {
@@ -7500,12 +7573,12 @@
         "basicAtkWindup": 0.40000001589457196,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster_Horde",
+            "Unit_Monster_Epic",
             "Unit_Monster_Camp",
+            "Unit_Special_Void",
             "Unit_Monster",
             "Unit_Monster_Large",
-            "Unit_Monster_Epic",
-            "Unit_Special_Void"
+            "Unit_Monster_Horde"
         ]
     },
     {
@@ -7523,10 +7596,10 @@
         "basicAtkWindup": 0.40000001589457196,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Horde",
+            "Unit_",
             "Unit_Special_Void",
-            "Unit_"
+            "Unit_Monster",
+            "Unit_Monster_Horde"
         ]
     },
     {
@@ -7544,10 +7617,10 @@
         "basicAtkWindup": 0.3124999953433872,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Camp",
             "Unit_Monster_Wolf",
-            "Unit_Monster_Large"
+            "Unit_Monster_Camp",
+            "Unit_Monster_Large",
+            "Unit_Monster"
         ]
     },
     {
@@ -7565,10 +7638,10 @@
         "basicAtkWindup": 0.3680981752129367,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Krug",
             "Unit_Monster_Camp",
-            "Unit_Monster_Large"
+            "Unit_Monster_Krug",
+            "Unit_Monster_Large",
+            "Unit_Monster"
         ]
     },
     {
@@ -7586,10 +7659,10 @@
         "basicAtkWindup": 0.40999999940395354,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Krug",
             "Unit_Monster_Camp",
-            "Unit_Monster_Medium"
+            "Unit_Monster_Krug",
+            "Unit_Monster_Medium",
+            "Unit_Monster"
         ]
     },
     {
@@ -7607,9 +7680,9 @@
         "basicAtkWindup": 0.40999999940395354,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
+            "Unit_Monster_Camp",
             "Unit_Monster_Krug",
-            "Unit_Monster_Camp"
+            "Unit_Monster"
         ]
     },
     {
@@ -7645,10 +7718,10 @@
         "basicAtkWindup": 0.3124999953433872,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Monster_Camp",
             "Unit_Monster_Wolf",
-            "Unit_Monster_Large"
+            "Unit_Monster_Camp",
+            "Unit_Monster_Large",
+            "Unit_Monster"
         ]
     },
     {
@@ -7666,9 +7739,9 @@
         "basicAtkWindup": 0.3124999953433872,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
+            "Unit_Monster_Wolf",
             "Unit_Monster_Camp",
-            "Unit_Monster_Wolf"
+            "Unit_Monster"
         ]
     },
     {
@@ -7686,9 +7759,9 @@
         "basicAtkWindup": 0.4912500010244548,
         "basicAtkWindupModify": 0.0,
         "tags": [
+            "Unit_Minion",
             "Unit_Minion_Lane_Melee",
-            "Unit_Minion_Lane",
-            "Unit_Minion"
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -7706,9 +7779,9 @@
         "basicAtkWindup": 0.31333333253860474,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Minion_Lane",
             "Unit_Minion_Lane_Ranged",
-            "Unit_Minion"
+            "Unit_Minion",
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -7727,8 +7800,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Minion_Lane_Siege",
-            "Unit_Minion_Lane",
-            "Unit_Minion"
+            "Unit_Minion",
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -7746,9 +7819,9 @@
         "basicAtkWindup": 0.3472222084248513,
         "basicAtkWindupModify": 0.0,
         "tags": [
+            "Unit_Minion",
             "Unit_Minion_Lane_Super",
-            "Unit_Minion_Lane",
-            "Unit_Minion"
+            "Unit_Minion_Lane"
         ]
     },
     {
@@ -7785,8 +7858,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Ward",
-            "Unit_Special_UntargetableBySpells",
-            "Unit_Plant"
+            "Unit_Plant",
+            "Unit_Special_UntargetableBySpells"
         ]
     },
     {
@@ -7805,8 +7878,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Ward",
-            "Unit_Special_UntargetableBySpells",
-            "Unit_Plant"
+            "Unit_Plant",
+            "Unit_Special_UntargetableBySpells"
         ]
     },
     {
@@ -7825,8 +7898,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Ward",
-            "Unit_Special_UntargetableBySpells",
-            "Unit_Plant"
+            "Unit_Plant",
+            "Unit_Special_UntargetableBySpells"
         ]
     },
     {
@@ -7880,10 +7953,10 @@
         "basicAtkWindup": 0.20000000794728598,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
             "Unit_Monster_Camp",
-            "Unit_Monster_Raptor",
-            "Unit_Monster_Large"
+            "Unit_Monster_Large",
+            "Unit_Monster",
+            "Unit_Monster_Raptor"
         ]
     },
     {
@@ -7901,8 +7974,8 @@
         "basicAtkWindup": 0.4000000059604645,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
             "Unit_Monster_Camp",
+            "Unit_Monster",
             "Unit_Monster_Raptor"
         ]
     },
@@ -7923,9 +7996,9 @@
         "tags": [
             "Unit_Monster_Camp",
             "Unit_Monster",
-            "Unit_Monster_Buff",
+            "Unit_Monster_Red",
             "Unit_Monster_Large",
-            "Unit_Monster_Red"
+            "Unit_Monster_Buff"
         ]
     },
     {
@@ -7943,9 +8016,9 @@
         "basicAtkWindup": 0.23952096780813728,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
+            "Unit_Monster_Camp",
             "Unit_Monster_Red",
-            "Unit_Monster_Camp"
+            "Unit_Monster"
         ]
     },
     {
@@ -7963,12 +8036,12 @@
         "basicAtkWindup": 0.25,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster_Camp",
-            "Unit_Monster",
-            "Unit_Monster_Large",
+            "Unit_Monster_RiftHerald",
             "Unit_Monster_Epic",
+            "Unit_Monster_Camp",
             "Unit_Special_Void",
-            "Unit_Monster_RiftHerald"
+            "Unit_Monster",
+            "Unit_Monster_Large"
         ]
     },
     {
@@ -7986,10 +8059,10 @@
         "basicAtkWindup": 0.25,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
             "Unit_Monster_Epic",
             "Unit_Special_Void",
-            "Unit_Monster_Large"
+            "Unit_Monster_Large",
+            "Unit_Monster"
         ]
     },
     {
@@ -8205,8 +8278,8 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
-            "Unit_Special"
+            "Unit_Special",
+            "Unit_Special_TurretIgnores"
         ]
     },
     {
@@ -8314,9 +8387,9 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_SyndraSphere",
+            "Unit_Special",
             "Unit_Special_TeleportInvalid",
-            "Unit_Special"
+            "Unit_Special_SyndraSphere"
         ]
     },
     {
@@ -8443,10 +8516,10 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Special_TeleportTarget",
-            "Unit_IsolationNonImpacting",
             "Unit_Special_TurretIgnores",
-            "Unit_Special_Trap",
             "Unit_Special",
+            "Unit_Special_Trap",
+            "Unit_IsolationNonImpacting",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -9765,6 +9838,24 @@
         ]
     },
     {
+        "name": "tftevent5yr_prop",
+        "healthBarHeight": 100.0,
+        "baseMoveSpeed": 0.0,
+        "attackRange": 0.0,
+        "attackSpeed": 0.0,
+        "attackSpeedRatio": 0.0,
+        "acquisitionRange": 0.0,
+        "selectionRadius": 0.0,
+        "pathingRadius": 0.0,
+        "gameplayRadius": 65.0,
+        "basicAtkMissileSpeed": 0.0,
+        "basicAtkWindup": 0.0,
+        "basicAtkWindupModify": 0.0,
+        "tags": [
+            "Unit_"
+        ]
+    },
+    {
         "name": "tfttutorial_chaosminionmelee",
         "healthBarHeight": 100.0,
         "baseMoveSpeed": 450.0,
@@ -9779,8 +9870,8 @@
         "basicAtkWindup": 0.3,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Champion"
+            "Unit_Champion",
+            "Unit_Monster"
         ]
     },
     {
@@ -9798,8 +9889,8 @@
         "basicAtkWindup": 0.3,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Champion"
+            "Unit_Champion",
+            "Unit_Monster"
         ]
     },
     {
@@ -9817,8 +9908,8 @@
         "basicAtkWindup": 0.4000000059604645,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Champion"
+            "Unit_Champion",
+            "Unit_Monster"
         ]
     },
     {
@@ -9836,8 +9927,8 @@
         "basicAtkWindup": 0.3680981752129367,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Champion"
+            "Unit_Champion",
+            "Unit_Monster"
         ]
     },
     {
@@ -9855,8 +9946,8 @@
         "basicAtkWindup": 0.3124999953433872,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Champion"
+            "Unit_Champion",
+            "Unit_Monster"
         ]
     },
     {
@@ -9874,8 +9965,8 @@
         "basicAtkWindup": 0.3124999953433872,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Champion"
+            "Unit_Champion",
+            "Unit_Monster"
         ]
     },
     {
@@ -9893,8 +9984,8 @@
         "basicAtkWindup": 0.20000000794728598,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Champion"
+            "Unit_Champion",
+            "Unit_Monster"
         ]
     },
     {
@@ -9912,8 +10003,8 @@
         "basicAtkWindup": 0.4000000059604645,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Monster",
-            "Unit_Champion"
+            "Unit_Champion",
+            "Unit_Monster"
         ]
     },
     {
@@ -9949,8 +10040,8 @@
         "basicAtkWindup": 0.2082999974489212,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TeleportTarget",
-            "Unit_Special"
+            "Unit_Special",
+            "Unit_Special_TeleportTarget"
         ]
     },
     {
@@ -10041,8 +10132,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Structure_Turret",
-            "Unit_Structure",
-            "Unit_Structure_Turret_Outer"
+            "Unit_Structure_Turret_Outer",
+            "Unit_Structure"
         ]
     },
     {
@@ -10241,8 +10332,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Minion_Summon",
-            "Unit_Minion_Summon_Large",
-            "Unit_Minion"
+            "Unit_Minion",
+            "Unit_Minion_Summon_Large"
         ]
     },
     {
@@ -10297,8 +10388,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Structure_Turret",
-            "Unit_Structure",
-            "Unit_Structure_Turret_Outer"
+            "Unit_Structure_Turret_Outer",
+            "Unit_Structure"
         ]
     },
     {
@@ -10516,9 +10607,9 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
             "Unit_Special",
+            "Unit_Special_TurretIgnores",
             "Unit_Special_UntargetableBySpells"
         ]
     },
@@ -10555,9 +10646,9 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Structure",
+            "Unit_IsolationNonImpacting",
             "Unit_Special_Void",
-            "Unit_IsolationNonImpacting"
+            "Unit_Structure"
         ]
     },
     {
@@ -10575,11 +10666,11 @@
         "basicAtkWindup": 0.3,
         "basicAtkWindupModify": 0.0,
         "tags": [
+            "Unit_Special_Void",
             "Unit_Minion_Summon",
-            "Unit_Special_MonsterIgnores",
-            "Unit_Minion",
             "Unit_Special_EpicMonsterIgnores",
-            "Unit_Special_Void"
+            "Unit_Minion",
+            "Unit_Special_MonsterIgnores"
         ]
     },
     {
@@ -10723,9 +10814,9 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
-            "Unit_Special"
+            "Unit_Special",
+            "Unit_Special_TurretIgnores"
         ]
     },
     {
@@ -10743,9 +10834,9 @@
         "basicAtkWindup": 0.0,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Special_TurretIgnores",
             "Unit_Ward",
-            "Unit_Special"
+            "Unit_Special",
+            "Unit_Special_TurretIgnores"
         ]
     },
     {
@@ -10800,8 +10891,8 @@
         "basicAtkWindupModify": 0.0,
         "tags": [
             "Unit_Minion_Summon",
-            "Unit_Minion_Summon_Large",
-            "Unit_Minion"
+            "Unit_Minion",
+            "Unit_Minion_Summon_Large"
         ]
     },
     {
@@ -10858,8 +10949,8 @@
         "tags": [
             "Unit_IsolationNonImpacting",
             "Unit_Special_TeleportInvalid",
-            "Unit_Special_YorickW",
-            "Unit_Special_UntargetableBySpells"
+            "Unit_Special_UntargetableBySpells",
+            "Unit_Special_YorickW"
         ]
     },
     {
@@ -11113,8 +11204,8 @@
         "basicAtkWindup": 0.2082999974489212,
         "basicAtkWindupModify": 0.0,
         "tags": [
-            "Unit_Minion_SummonName_game_character_displayname_ZyraSeed",
-            "Unit_Minion"
+            "Unit_Minion",
+            "Unit_Minion_SummonName_game_character_displayname_ZyraSeed"
         ]
     },
     {
